@@ -1,0 +1,3856 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#071426">
+  <title>CHAKRAVYUH: CYBERSHIELD HACKATHON · VIT-AP University</title>
+  <meta name="description" content="CHAKRAVYUH: Cybershield Hackathon at VIT-AP University on 27–28 October 2026. ₹7,00,000 prize pool across 5 frontiers: Cybersecurity & Blockchain, Space Tech, Quantum Computing, FinTech, and Sustainability.">
+  <link rel="canonical" href="https://chakravyuh.vitap.ac.in/">
+  <meta property="og:title" content="CHAKRAVYUH: CYBERSHIELD HACKATHON · VIT-AP University">
+  <meta property="og:description" content="Build the defence. Break the limits. Two-day offline hackathon with a ₹7,00,000 prize pool exploring 5 emerging technology frontiers.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/src/assets/images/theme_cyber_server_room_1792211745523.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CHAKRAVYUH: CYBERSHIELD HACKATHON">
+  <meta name="twitter:description" content="27–28 October 2026 · VIT-AP University · ₹7,00,000 Prize Pool">
+  
+  <!-- Custom Cyber-Shield Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23071426'/%3E%3Cpath d='M16 4 L26 8 V16 C26 22 16 27 16 27 C16 27 6 22 6 16 V8 Z' fill='%230C2B52' stroke='%23287BFF' stroke-width='1.8'/%3E%3Cpath d='M16 9 L22 12 V16 C22 20 16 23.5 16 23.5 C16 23.5 10 20 10 16 V12 Z' fill='none' stroke='%2358E1FF' stroke-width='1.5' stroke-dasharray='2,2'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%2358E1FF'/%3E%3C/svg%3E">
+
+  <!-- Typography: Space Grotesk (Display) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy-bg: #071426;
+      --navy-surface: #0C2B52;
+      --navy-surface-alt: rgba(10, 31, 59, 0.75);
+      --navy-card: rgba(12, 43, 82, 0.65);
+      --navy-border: rgba(40, 123, 255, 0.22);
+      --navy-border-bright: rgba(88, 225, 255, 0.45);
+      --blue-electric: #287BFF;
+      --cyan-neon: #58E1FF;
+      --white-ice: #F3F8FF;
+      --steel-blue: #8CA6C5;
+      --steel-dark: #4b6382;
+      --gold-signal: #F5BD55;
+      --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+
+      /* Theme specific infographic pointer colors from user's image */
+      --color-cyber: #00A8B5;
+      --color-space: #8E3B87;
+      --color-quantum: #F4A228;
+      --color-fintech: #F05A54;
+      --color-sustainability: #4F6272;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--navy-bg);
+      color: var(--white-ice);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--navy-bg);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      background: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--cyan-neon);
+      outline-offset: 3px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 2.5rem;
+      }
+    }
+
+    /* ========================================================
+       SMOOTH POP / UPWARD-MOVING REVEAL ANIMATIONS
+       ======================================================== */
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(32px) scale(0.985);
+      transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+      will-change: opacity, transform;
+    }
+
+    .reveal-section.is-revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* ========================================================
+       CINEMATIC VIDEO-STYLE CURTAIN SHUTTER TRANSITION
+       (Matches video wipe with bottom progress pill indicator)
+       ======================================================== */
+    .screen-transition-curtain {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: #040812;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: clamp(2rem, 5vh, 3.5rem);
+      pointer-events: none;
+      transform: translateY(100%);
+      transition: transform 0.42s cubic-bezier(0.77, 0, 0.175, 1);
+      will-change: transform;
+    }
+
+    .screen-transition-curtain.active-in {
+      pointer-events: auto;
+      transform: translateY(0%);
+    }
+
+    .screen-transition-curtain.active-out {
+      pointer-events: auto;
+      transform: translateY(-100%);
+      transition: transform 0.46s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .transition-loader-pill {
+      width: 46px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 9999px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 18px rgba(88, 225, 255, 0.6);
+    }
+
+    .transition-loader-dot {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #287BFF, #58E1FF, #FFFFFF);
+      border-radius: 9999px;
+      animation: transitionPillScan 0.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes transitionPillScan {
+      0% { left: -100%; }
+      50% { left: 0%; }
+      100% { left: 100%; }
+    }
+
+    /* Page Transition Container */
+    #page-fader {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      transition: opacity 0.35s var(--ease-smooth), transform 0.35s var(--ease-smooth);
+    }
+
+    #page-fader.page-exit {
+      opacity: 0;
+      transform: translateY(-16px) scale(0.99);
+    }
+
+    #page-fader.page-enter {
+      opacity: 0;
+      transform: translateY(20px) scale(0.99);
+    }
+
+    /* ========================================================
+       SCROLL-TRIGGER TEXT-REVEAL SYSTEM
+       ======================================================== */
+    .text-mask-wrapper {
+      overflow: hidden;
+      display: block;
+      margin: -2px 0;
+    }
+
+    .text-mask-reveal {
+      display: block;
+      transform: translateY(115%);
+      opacity: 0;
+      transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease;
+      will-change: transform, opacity;
+    }
+
+    .is-revealed .text-mask-reveal,
+    .text-mask-reveal.is-revealed {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+
+    /* Inline text mask reveal */
+    .text-mask-inline {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    .text-mask-inline-reveal {
+      display: inline-block;
+      transform: translateY(115%);
+      opacity: 0;
+      transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease;
+      will-change: transform, opacity;
+    }
+
+    .is-revealed .text-mask-inline-reveal,
+    .text-mask-inline-reveal.is-revealed {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+
+    /* Scroll-trigger block reveal for cards and descriptions */
+    .reveal-block {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+
+    .is-revealed .reveal-block,
+    .reveal-block.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered text delays */
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+    .reveal-delay-5 { transition-delay: 0.40s; }
+
+    /* ========================================================
+       FLOATING CIRCULAR-EDGE NAVBAR
+       ======================================================== */
+    .floating-nav-wrapper {
+      position: fixed;
+      top: 1.25rem;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+      pointer-events: none;
+      padding: 0 1rem;
+    }
+
+    .floating-nav-dock {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: rgba(7, 20, 38, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--navy-border-bright);
+      border-radius: 9999px;
+      padding: 0.55rem 1rem 0.55rem 1.4rem;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55), 0 0 25px rgba(40, 123, 255, 0.2);
+      transition: all 0.25s var(--ease-smooth);
+      max-width: 100%;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--white-ice);
+      white-space: nowrap;
+    }
+
+    .nav-shield-icon {
+      width: 22px;
+      height: 22px;
+      color: var(--cyan-neon);
+    }
+
+    .nav-links-menu {
+      display: none;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    @media (min-width: 960px) {
+      .nav-links-menu {
+        display: flex;
+      }
+    }
+
+    .nav-menu-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--steel-blue);
+      white-space: nowrap;
+      transition: color 0.18s ease;
+      position: relative;
+      padding: 0.2rem 0;
+    }
+
+    .nav-menu-link:hover, .nav-menu-link.active {
+      color: var(--cyan-neon);
+    }
+
+    .nav-dock-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-dock-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--blue-electric);
+      color: var(--white-ice);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.5rem 1.15rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(88, 225, 255, 0.4);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-dock-cta:hover {
+      background: #1b6be0;
+      box-shadow: 0 4px 15px rgba(40, 123, 255, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--navy-surface);
+      border: 1px solid var(--navy-border);
+      color: var(--white-ice);
+    }
+
+    @media (min-width: 960px) {
+      .mobile-menu-toggle {
+        display: none;
+      }
+    }
+
+    /* Mobile Floating Drawer */
+    .mobile-floating-menu {
+      display: none;
+      position: fixed;
+      top: 5.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      background: rgba(7, 20, 38, 0.96);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--navy-border-bright);
+      border-radius: 20px;
+      padding: 1.5rem;
+      z-index: 999;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .mobile-floating-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu-item {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--steel-blue);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(40, 123, 255, 0.12);
+    }
+
+    .mobile-menu-item:hover {
+      color: var(--cyan-neon);
+    }
+
+    /* ========================================================
+       LANDING OVERVIEW SECTION
+       ======================================================== */
+    .overview-hero-section {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7.5rem 0 4rem;
+      background-image: 
+        linear-gradient(180deg, rgba(7, 20, 38, 0.72) 0%, rgba(7, 20, 38, 0.88) 60%, var(--navy-bg) 100%),
+        url('/src/assets/images/bg_hero_person_shield_1792211743722.jpg');
+      background-size: cover;
+      background-position: center 25%;
+      background-repeat: no-repeat;
+      z-index: 2;
+    }
+
+    .hero-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hero-layout-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .hero-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .hero-kicker-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan-neon);
+    }
+
+    .hero-primary-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--white-ice);
+      text-wrap: balance;
+    }
+
+    .hero-cyber-subheading {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--steel-blue);
+      text-transform: uppercase;
+    }
+
+    .hero-core-tagline {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--cyan-neon);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-narrative-lead {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--steel-blue);
+      max-width: 580px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--blue-electric);
+      color: var(--white-ice);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.8rem 1.6rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(88, 225, 255, 0.5);
+      transition: all 0.25s var(--ease-smooth);
+    }
+
+    .btn-hero-primary:hover {
+      background: #1b6be0;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(40, 123, 255, 0.45);
+    }
+
+    .btn-hero-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(12, 43, 82, 0.7);
+      backdrop-filter: blur(10px);
+      color: var(--white-ice);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.8rem 1.6rem;
+      border-radius: 9999px;
+      border: 1px solid var(--navy-border);
+      transition: all 0.25s var(--ease-smooth);
+    }
+
+    .btn-hero-secondary:hover {
+      border-color: var(--cyan-neon);
+      color: var(--cyan-neon);
+      transform: translateY(-2px);
+    }
+
+    /* CIRCULAR CYBER-SHIELD ORB */
+    .hero-shield-orb-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .circular-shield-orb {
+      position: relative;
+      width: clamp(280px, 32vw, 420px);
+      height: clamp(280px, 32vw, 420px);
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--cyan-neon);
+      box-shadow: 
+        0 0 50px rgba(88, 225, 255, 0.35),
+        0 0 100px rgba(40, 123, 255, 0.25),
+        inset 0 0 40px rgba(7, 20, 38, 0.8);
+      background: var(--navy-surface);
+      transition: transform 0.6s var(--ease-smooth);
+    }
+
+    .circular-shield-orb:hover {
+      transform: scale(1.03);
+    }
+
+    .circular-shield-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .circular-shield-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(7, 20, 38, 0.1) 0%, rgba(7, 20, 38, 0.75) 100%);
+      pointer-events: none;
+    }
+
+    .radar-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px dashed rgba(88, 225, 255, 0.3);
+      pointer-events: none;
+      animation: rotateRings 40s linear infinite;
+    }
+
+    .radar-ring.outer {
+      width: calc(clamp(280px, 32vw, 420px) + 60px);
+      height: calc(clamp(280px, 32vw, 420px) + 60px);
+      border: 1px solid rgba(40, 123, 255, 0.25);
+    }
+
+    .radar-ring.inner {
+      width: calc(clamp(280px, 32vw, 420px) + 30px);
+      height: calc(clamp(280px, 32vw, 420px) + 30px);
+      border-color: rgba(88, 225, 255, 0.4);
+      animation-direction: reverse;
+      animation-duration: 25s;
+    }
+
+    @keyframes rotateRings {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .shield-orb-floating-badge {
+      position: absolute;
+      bottom: -15px;
+      background: rgba(7, 20, 38, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--cyan-neon);
+      border-radius: 9999px;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold-signal);
+      letter-spacing: 0.05em;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
+      z-index: 5;
+    }
+
+    /* Facts Ribbon */
+    .facts-capsule-strip {
+      margin-top: 3.5rem;
+      background: rgba(12, 43, 82, 0.55);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--navy-border);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+    }
+
+    .facts-capsule-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .facts-capsule-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .fact-capsule-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .fact-capsule-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--steel-blue);
+    }
+
+    .fact-capsule-value {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white-ice);
+    }
+
+    .fact-capsule-value.gold {
+      color: var(--gold-signal);
+    }
+
+    /* ========================================================
+       ANIMATED CYBER-TUNNEL BACKDROP ZONE
+       ======================================================== */
+    .frontiers-through-faq-zone {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--navy-bg);
+    }
+
+    .cyber-tunnel-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.85;
+    }
+
+    .tunnel-scrim-layer {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 20%, rgba(7, 20, 38, 0.45) 0%, rgba(7, 20, 38, 0.85) 60%, rgba(7, 20, 38, 0.95) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .zone-content-relative {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ========================================================
+       CHAKRA 5-THEME POINTER INFOGRAPHIC STAGE
+       (Matches exact infographic uploaded by user:
+        5 circular pointer nodes with inward-pointing tips
+        surrounding the rotating center Chakra wheel)
+       ======================================================== */
+    .chakra-section {
+      padding: 6rem 0 5rem;
+      position: relative;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-eyebrow-text {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan-neon);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white-ice);
+      line-height: 1.15;
+    }
+
+    .section-lead-p {
+      font-size: 1.05rem;
+      color: var(--steel-blue);
+      margin-top: 0.75rem;
+      line-height: 1.6;
+    }
+
+    .chakra-infographic-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Circular Arena holding the 5 pointer nodes & center rotating chakra */
+    .infographic-wheel-arena {
+      position: relative;
+      width: clamp(340px, 62vw, 680px);
+      height: clamp(340px, 62vw, 680px);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Dotted Orbit & Pointer Targets SVG Canvas */
+    .infographic-dotted-guide-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* Center Rotating Chakra Labyrinth Disk */
+    .chakra-rotating-center {
+      position: relative;
+      width: clamp(140px, 24vw, 220px);
+      height: clamp(140px, 24vw, 220px);
+      border-radius: 50%;
+      z-index: 10;
+      border: 3px solid var(--cyan-neon);
+      box-shadow: 0 0 50px rgba(88, 225, 255, 0.45), inset 0 0 35px rgba(0, 0, 0, 0.85);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.4s var(--ease-smooth);
+    }
+
+    .chakra-rotating-center:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 70px rgba(88, 225, 255, 0.65);
+    }
+
+    .chakra-center-wheel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      animation: continuousChakraRotation 75s linear infinite;
+    }
+
+    @keyframes continuousChakraRotation {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* 5 Surrounding Pointer Nodes */
+    .infographic-theme-node {
+      position: absolute;
+      width: clamp(105px, 16vw, 150px);
+      height: clamp(105px, 16vw, 150px);
+      transform: translate(-50%, -50%);
+      z-index: 20;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s var(--ease-smooth), z-index 0.2s ease;
+    }
+
+    .infographic-theme-node.active,
+    .infographic-theme-node:hover {
+      transform: translate(-50%, -50%) scale(1.12);
+      z-index: 40;
+    }
+
+    /* The outer pointer teardrop base pointing directly toward the rotating center */
+    .pointer-base-shell {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: filter 0.25s ease;
+    }
+
+    /* The sharp triangular pointer tip aiming inward toward the center (Unified Cyan Neon) */
+    .inward-pointer-tip {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      transition: transform 0.25s ease;
+      filter: drop-shadow(0 0 8px rgba(88, 225, 255, 0.7));
+    }
+
+    /* Angles of inward pointers towards center (50%, 50%):
+       - All using single common Hackathon cyber cyan color */
+    .node-theme-cyber .inward-pointer-tip {
+      bottom: -16px;
+      left: calc(50% - 12px);
+      border-top: 18px solid var(--cyan-neon);
+    }
+
+    .node-theme-space .inward-pointer-tip {
+      bottom: -2px;
+      left: -8px;
+      border-top: 18px solid var(--cyan-neon);
+      transform: rotate(54deg);
+    }
+
+    .node-theme-quantum .inward-pointer-tip {
+      top: -2px;
+      left: -8px;
+      border-bottom: 18px solid var(--cyan-neon);
+      transform: rotate(-54deg);
+    }
+
+    .node-theme-fintech .inward-pointer-tip {
+      top: -2px;
+      right: -8px;
+      border-bottom: 18px solid var(--cyan-neon);
+      transform: rotate(54deg);
+    }
+
+    .node-theme-sustainability .inward-pointer-tip {
+      bottom: -2px;
+      right: -8px;
+      border-top: 18px solid var(--cyan-neon);
+      transform: rotate(-54deg);
+    }
+
+    /* Unified single common color Arc border around all five themes */
+    .pointer-color-arc {
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      pointer-events: none;
+      border: 3.5px solid var(--cyan-neon);
+      box-shadow: 0 0 16px rgba(88, 225, 255, 0.45);
+    }
+
+    .node-theme-cyber .pointer-color-arc {
+      border-bottom-color: transparent;
+    }
+
+    .node-theme-space .pointer-color-arc {
+      border-left-color: transparent;
+    }
+
+    .node-theme-quantum .pointer-color-arc {
+      border-top-color: transparent;
+    }
+
+    .node-theme-fintech .pointer-color-arc {
+      border-top-color: transparent;
+    }
+
+    .node-theme-sustainability .pointer-color-arc {
+      border-right-color: transparent;
+    }
+
+    /* Circular Disc */
+    .pointer-inner-disc {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #071426;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.65), inset 0 0 16px rgba(88, 225, 255, 0.35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .pointer-node-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.68) contrast(1.08);
+      transition: transform 0.4s var(--ease-smooth), filter 0.3s ease;
+    }
+
+    .infographic-theme-node:hover .pointer-node-img,
+    .infographic-theme-node.active .pointer-node-img {
+      transform: scale(1.12);
+      filter: brightness(0.82) contrast(1.12);
+    }
+
+    /* Center-aligned theme overlay in circular image */
+    .pointer-node-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(7, 20, 38, 0.45) 0%, rgba(7, 20, 38, 0.88) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .pointer-node-title {
+      font-family: var(--font-display);
+      font-size: clamp(0.72rem, 1vw, 0.88rem);
+      font-weight: 700;
+      color: #FFFFFF;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.8);
+      letter-spacing: 0.05em;
+      line-height: 1.15;
+      max-width: 90%;
+      text-transform: uppercase;
+    }
+
+    .pointer-node-idx {
+      font-size: 0.65rem;
+      font-family: var(--font-display);
+      font-weight: 800;
+      color: var(--cyan-neon);
+      margin-bottom: 3px;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 10px rgba(88, 225, 255, 0.8);
+    }
+
+    /* In-place Motivational Popup Text Box on Hover (White text with transparent background) */
+    .node-motivational-callout {
+      position: absolute;
+      z-index: 100;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s var(--ease-smooth), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+      background: rgba(7, 20, 38, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 12px;
+      padding: 0.8rem 1.15rem;
+      width: max-content;
+      max-width: min(290px, 75vw);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.8), 0 0 25px rgba(88, 225, 255, 0.35);
+      text-align: center;
+    }
+
+    .node-theme-cyber .node-motivational-callout {
+      border: 1.5px solid var(--cyan-neon);
+      top: -95px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.92);
+    }
+    .node-theme-cyber:hover .node-motivational-callout,
+    .node-theme-cyber.active .node-motivational-callout {
+      opacity: 1;
+      visibility: visible;
+      animation: cyberForwardFloat 2.8s ease-in-out infinite alternate;
+    }
+
+    .node-theme-space .node-motivational-callout {
+      border: 1.5px solid var(--cyan-neon);
+      top: 50%;
+      left: 108%;
+      transform: translateY(-50%) scale(0.92);
+    }
+    .node-theme-space:hover .node-motivational-callout,
+    .node-theme-space.active .node-motivational-callout {
+      opacity: 1;
+      visibility: visible;
+      animation: spaceForwardFloat 2.8s ease-in-out infinite alternate;
+    }
+
+    .node-theme-quantum .node-motivational-callout {
+      border: 1.5px solid var(--cyan-neon);
+      top: 108%;
+      left: 50%;
+      transform: translateX(-35%) scale(0.92);
+    }
+    .node-theme-quantum:hover .node-motivational-callout,
+    .node-theme-quantum.active .node-motivational-callout {
+      opacity: 1;
+      visibility: visible;
+      animation: quantumForwardFloat 2.8s ease-in-out infinite alternate;
+    }
+
+    .node-theme-fintech .node-motivational-callout {
+      border: 1.5px solid var(--cyan-neon);
+      top: 108%;
+      left: 50%;
+      transform: translateX(-65%) scale(0.92);
+    }
+    .node-theme-fintech:hover .node-motivational-callout,
+    .node-theme-fintech.active .node-motivational-callout {
+      opacity: 1;
+      visibility: visible;
+      animation: fintechForwardFloat 2.8s ease-in-out infinite alternate;
+    }
+
+    .node-theme-sustainability .node-motivational-callout {
+      border: 1.5px solid var(--cyan-neon);
+      top: 50%;
+      right: 108%;
+      transform: translateY(-50%) scale(0.92);
+    }
+    .node-theme-sustainability:hover .node-motivational-callout,
+    .node-theme-sustainability.active .node-motivational-callout {
+      opacity: 1;
+      visibility: visible;
+      animation: sustainForwardFloat 2.8s ease-in-out infinite alternate;
+    }
+
+    /* Keyframes giving the motivational text a dynamic forward-stepping floating effect */
+    @keyframes cyberForwardFloat {
+      0% { transform: translateX(-50%) translateY(0) scale(1); }
+      100% { transform: translateX(-50%) translateY(-8px) scale(1.07); }
+    }
+    @keyframes spaceForwardFloat {
+      0% { transform: translateY(-50%) translateX(0) scale(1); }
+      100% { transform: translateY(-50%) translateX(8px) scale(1.07); }
+    }
+    @keyframes quantumForwardFloat {
+      0% { transform: translateX(-35%) translateY(0) scale(1); }
+      100% { transform: translateX(-35%) translateY(8px) scale(1.07); }
+    }
+    @keyframes fintechForwardFloat {
+      0% { transform: translateX(-65%) translateY(0) scale(1); }
+      100% { transform: translateX(-65%) translateY(8px) scale(1.07); }
+    }
+    @keyframes sustainForwardFloat {
+      0% { transform: translateY(-50%) translateX(0) scale(1); }
+      100% { transform: translateY(-50%) translateX(-8px) scale(1.07); }
+    }
+
+    .callout-quote-text {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.35;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    }
+
+    /* Node exact positions in 5-point circular constellation around center (50%, 50%) */
+    /* Geometric star points on circle radius R ≈ 37% */
+    .pos-top          { top: 13%; left: 50%; }
+    .pos-top-right    { top: 38%; left: 85%; }
+    .pos-bottom-right { top: 80%; left: 72%; }
+    .pos-bottom-left  { top: 80%; left: 28%; }
+    .pos-top-left     { top: 38%; left: 15%; }
+
+    /* Theme Spotlight Active Preview Box (Below Infographic) */
+    .chakra-preview-box {
+      margin-top: 3.5rem;
+      width: 100%;
+      background: rgba(12, 43, 82, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--navy-border-bright);
+      border-radius: 16px;
+      padding: 1.75rem 2.25rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      align-items: center;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    @media (min-width: 860px) {
+      .chakra-preview-box {
+        grid-template-columns: 220px 1fr auto;
+      }
+    }
+
+    .preview-img-container {
+      height: 150px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--navy-border);
+    }
+
+    .preview-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .preview-content-area {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .preview-tag-line {
+      font-size: 0.75rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--cyan-neon);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .preview-heading-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--white-ice);
+    }
+
+    .preview-motivational-quote-bar {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      background: rgba(88, 225, 255, 0.12);
+      border-left: 3px solid var(--cyan-neon);
+      padding: 0.4rem 0.75rem;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin: 0.2rem 0;
+    }
+
+    .preview-desc-body {
+      font-size: 0.9rem;
+      color: var(--steel-blue);
+      line-height: 1.5;
+    }
+
+    .btn-enter-theme {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--blue-electric);
+      color: var(--white-ice);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.8rem 1.6rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(88, 225, 255, 0.5);
+      transition: all 0.25s var(--ease-smooth);
+      white-space: nowrap;
+    }
+
+    .btn-enter-theme:hover {
+      background: #1b6be0;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(40, 123, 255, 0.45);
+    }
+
+    /* ========================================================
+       WHY PARTICIPATE SECTION
+       ======================================================== */
+    .mission-section {
+      padding: 6.5rem 0;
+      border-top: 1px solid var(--navy-border);
+      border-bottom: 1px solid var(--navy-border);
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 640px) {
+      .mission-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .mission-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .mission-card {
+      background: rgba(10, 31, 59, 0.82);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--navy-border);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: all 0.25s var(--ease-smooth);
+    }
+
+    .mission-card:hover {
+      border-color: var(--navy-border-bright);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .mission-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--cyan-neon);
+    }
+
+    .mission-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white-ice);
+    }
+
+    .mission-desc {
+      font-size: 0.9rem;
+      color: var(--steel-blue);
+      line-height: 1.6;
+    }
+
+    /* ========================================================
+       TWO-DAY TIMELINE SECTION
+       ======================================================== */
+    .timeline-operation-section {
+      padding: 6.5rem 0;
+    }
+
+    .timeline-flow-container {
+      max-width: 860px;
+      margin: 3.5rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      position: relative;
+    }
+
+    .timeline-flow-line {
+      position: absolute;
+      top: 15px;
+      bottom: 15px;
+      left: 17px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--cyan-neon) 0%, var(--blue-electric) 100%);
+    }
+
+    .timeline-entry {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .timeline-diamond {
+      width: 36px;
+      height: 36px;
+      background: var(--navy-bg);
+      border: 2px solid var(--cyan-neon);
+      transform: rotate(45deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 2;
+      box-shadow: 0 0 15px rgba(88, 225, 255, 0.4);
+    }
+
+    .timeline-diamond-inner {
+      width: 12px;
+      height: 12px;
+      background: var(--cyan-neon);
+    }
+
+    .timeline-content-card {
+      background: rgba(10, 31, 59, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--navy-border);
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: border-color 0.25s ease;
+    }
+
+    .timeline-content-card:hover {
+      border-color: var(--cyan-neon);
+    }
+
+    .timeline-day-header {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white-ice);
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-phase-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--cyan-neon);
+      text-transform: uppercase;
+    }
+
+    .timeline-narrative {
+      font-size: 0.95rem;
+      color: var(--steel-blue);
+      line-height: 1.6;
+      margin-top: 0.25rem;
+    }
+
+    .timeline-notice-box {
+      border: 1px dashed var(--navy-border-bright);
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+      color: var(--steel-blue);
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      background: rgba(12, 43, 82, 0.4);
+    }
+
+    /* ========================================================
+       PARTNERS & ACCESSIBLE FAQ
+       ======================================================== */
+    .partners-section-wrap {
+      padding: 5rem 0;
+      border-top: 1px solid var(--navy-border);
+      border-bottom: 1px solid var(--navy-border);
+    }
+
+    .partner-grid-tiles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .partner-grid-tiles {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .partner-tile {
+      background: rgba(12, 43, 82, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--navy-border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      min-height: 90px;
+      transition: all 0.2s ease;
+    }
+
+    .partner-tile:hover {
+      border-color: var(--cyan-neon);
+      background: rgba(12, 43, 82, 0.9);
+    }
+
+    .partner-title-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white-ice);
+    }
+
+    .partner-desc-role {
+      font-size: 0.72rem;
+      color: var(--steel-blue);
+    }
+
+    /* FAQ List */
+    .faq-list-wrap {
+      max-width: 860px;
+      margin: 2.5rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    details.faq-toggle-item {
+      background: rgba(10, 31, 59, 0.82);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--navy-border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    details.faq-toggle-item[open] {
+      border-color: var(--cyan-neon);
+    }
+
+    summary.faq-toggle-question {
+      padding: 1.25rem 1.5rem;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white-ice);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    summary.faq-toggle-question::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-arrow {
+      width: 18px;
+      height: 18px;
+      color: var(--cyan-neon);
+      transition: transform 0.25s ease;
+    }
+
+    details.faq-toggle-item[open] .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-toggle-answer {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.92rem;
+      color: var(--steel-blue);
+      line-height: 1.6;
+    }
+
+    /* ========================================================
+       DEDICATED THEME PAGE VIEW (FULL-SCREEN EMOTIVE EXPERIENCE)
+       ======================================================== */
+    .theme-fullpage-view {
+      display: none;
+      min-height: 100vh;
+      position: relative;
+      padding: 7rem 0 6rem;
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+    }
+
+    .theme-fullpage-backdrop-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .theme-page-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-back-to-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(7, 20, 38, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--navy-border-bright);
+      color: var(--cyan-neon);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.6rem 1.25rem;
+      border-radius: 9999px;
+      margin-bottom: 2rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-back-to-home:hover {
+      background: var(--navy-surface);
+      transform: translateX(-3px);
+    }
+
+    .theme-header-banner {
+      background: rgba(7, 20, 38, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--navy-border-bright);
+      border-radius: 18px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .theme-header-banner {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+
+    .theme-banner-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .theme-banner-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan-neon);
+    }
+
+    .theme-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--white-ice);
+      line-height: 1.1;
+    }
+
+    .theme-banner-desc {
+      font-size: 1.05rem;
+      color: var(--steel-blue);
+      line-height: 1.6;
+    }
+
+    .theme-banner-visual-box {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--navy-border-bright);
+      height: 220px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .theme-banner-visual-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* THE THREE DIFFICULTY LEVELS */
+    .levels-selection-bar {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .levels-selection-bar {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .level-tab-btn {
+      background: rgba(7, 20, 38, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--navy-border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s var(--ease-smooth);
+    }
+
+    .level-tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--cyan-neon);
+      transition: width 0.3s ease;
+    }
+
+    .level-tab-btn:hover {
+      border-color: var(--navy-border-bright);
+      background: rgba(12, 43, 82, 0.7);
+    }
+
+    .level-tab-btn.active {
+      border-color: var(--cyan-neon);
+      background: rgba(12, 43, 82, 0.95);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(88, 225, 255, 0.2);
+    }
+
+    .level-tab-btn.active::after {
+      width: 100%;
+    }
+
+    .level-tab-num {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white-ice);
+      letter-spacing: 0.05em;
+    }
+
+    .level-tab-desc {
+      font-size: 0.8rem;
+      color: var(--steel-blue);
+      margin-top: 0.25rem;
+    }
+
+    /* Challenges List on Theme Page */
+    .theme-challenges-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 860px) {
+      .theme-challenges-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .challenge-card {
+      background: rgba(7, 20, 38, 0.88);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--navy-border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      transition: all 0.25s var(--ease-smooth);
+    }
+
+    .challenge-card:hover {
+      border-color: var(--navy-border-bright);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    .challenge-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .challenge-id-badge {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--cyan-neon);
+      letter-spacing: 0.08em;
+    }
+
+    .challenge-level-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(88, 225, 255, 0.3);
+      background: rgba(88, 225, 255, 0.1);
+      color: var(--white-ice);
+    }
+
+    .challenge-level-pill.flagship {
+      border-color: rgba(245, 189, 85, 0.5);
+      background: rgba(245, 189, 85, 0.15);
+      color: var(--gold-signal);
+    }
+
+    .challenge-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white-ice);
+      line-height: 1.35;
+    }
+
+    .challenge-card-summary {
+      font-size: 0.92rem;
+      color: var(--steel-blue);
+      line-height: 1.6;
+    }
+
+    .tools-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tool-badge {
+      font-size: 0.72rem;
+      color: var(--steel-blue);
+      background: rgba(12, 43, 82, 0.8);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      border: 1px solid rgba(40, 123, 255, 0.2);
+    }
+
+    .challenge-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(40, 123, 255, 0.15);
+      padding-top: 1rem;
+    }
+
+    /* Switcher to other themes at bottom */
+    .theme-quick-switch-strip {
+      margin-top: 4.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--navy-border);
+    }
+
+    .quick-switch-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (min-width: 900px) {
+      .quick-switch-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .quick-switch-card {
+      background: rgba(7, 20, 38, 0.8);
+      border: 1px solid var(--navy-border);
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .quick-switch-card:hover {
+      border-color: var(--cyan-neon);
+      transform: translateY(-2px);
+    }
+
+    /* ========================================================
+       MODAL: FULL CHALLENGE SPECIFICATION
+       ======================================================== */
+    .challenge-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 11, 22, 0.88);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      padding: 1.5rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .challenge-modal-backdrop.open {
+      display: flex;
+    }
+
+    .challenge-modal-dialog {
+      background: var(--navy-surface-alt);
+      border: 1px solid var(--navy-border-bright);
+      border-radius: 16px;
+      max-width: 740px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2.25rem;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .modal-head-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(40, 123, 255, 0.2);
+      padding-bottom: 1.25rem;
+    }
+
+    .modal-close-icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--navy-surface);
+      border: 1px solid var(--navy-border);
+      color: var(--steel-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .modal-close-icon-btn:hover {
+      color: var(--white-ice);
+      border-color: var(--cyan-neon);
+    }
+
+    .modal-field-title {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cyan-neon);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+
+    .modal-bullet-list {
+      list-style: square;
+      padding-left: 1.25rem;
+      color: var(--steel-blue);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* PLAIN BACKGROUND FOOTER */
+    .site-footer {
+      background: #040c17;
+      border-top: 1px solid var(--navy-border);
+      padding: 4.5rem 0 2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-columns {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid rgba(40, 123, 255, 0.12);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--steel-dark);
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom-bar {
+        flex-direction: row;
+      }
+    }
+
+    /* Accessibility / Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FULLSCREEN VIDEO-STYLE TRANSITION CURTAIN (WITH BOTTOM PROGRESS PILL) -->
+  <div id="screen-transition-curtain" class="screen-transition-curtain" aria-hidden="true">
+    <div class="transition-loader-pill">
+      <span class="transition-loader-dot"></span>
+    </div>
+  </div>
+
+  <!-- FLOATING CIRCULAR-EDGE NAVBAR -->
+  <div class="floating-nav-wrapper">
+    <header class="floating-nav-dock" role="banner">
+      <a href="index.html" class="nav-brand" onclick="navigateToHome(event)" aria-label="CHAKRAVYUH Homepage">
+        <svg class="nav-shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span>CHAKRAVYUH</span>
+      </a>
+
+      <!-- Primary navigation menu with video transition tab switching -->
+      <nav class="nav-links-menu" aria-label="Primary Navigation">
+        <a href="#overview" class="nav-menu-link active" onclick="handleNavTabClick('#overview', event)">Overview</a>
+        <a href="#chakra" class="nav-menu-link" onclick="handleNavTabClick('#chakra', event)">Five Frontiers</a>
+        <a href="#mission" class="nav-menu-link" onclick="handleNavTabClick('#mission', event)">Why Participate</a>
+        <a href="#timeline" class="nav-menu-link" onclick="handleNavTabClick('#timeline', event)">Timeline</a>
+        <a href="#partners" class="nav-menu-link" onclick="handleNavTabClick('#partners', event)">Partners</a>
+        <a href="#faq" class="nav-menu-link" onclick="handleNavTabClick('#faq', event)">FAQ</a>
+      </nav>
+
+      <div class="nav-dock-actions">
+        <a href="#chakra" class="btn-dock-cta" onclick="handleNavTabClick('#chakra', event)">
+          <span>Explore Themes</span>
+          <span>↗</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobile-nav-toggle" aria-label="Open mobile navigation">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <!-- Mobile Floating Drawer -->
+  <div class="mobile-floating-menu" id="mobile-floating-menu">
+    <a href="#overview" class="mobile-menu-item" onclick="closeMobileNav(); handleNavTabClick('#overview', event)">Overview</a>
+    <a href="#chakra" class="mobile-menu-item" onclick="closeMobileNav(); handleNavTabClick('#chakra', event)">Five Frontiers</a>
+    <a href="#mission" class="mobile-menu-item" onclick="closeMobileNav(); handleNavTabClick('#mission', event)">Why Participate</a>
+    <a href="#timeline" class="mobile-menu-item" onclick="closeMobileNav(); handleNavTabClick('#timeline', event)">Two-Day Timeline</a>
+    <a href="#partners" class="mobile-menu-item" onclick="closeMobileNav(); handleNavTabClick('#partners', event)">Partners &amp; Sponsors</a>
+    <a href="#faq" class="mobile-menu-item" onclick="closeMobileNav(); handleNavTabClick('#faq', event)">FAQ</a>
+  </div>
+
+  <!-- PAGE FADER WRAPPER FOR SMOOTH SECTION / PAGE TRANSITIONS -->
+  <div id="page-fader">
+
+    <!-- MAIN LANDING VIEW -->
+    <main id="landing-page-view">
+
+      <!-- HERO OVERVIEW SECTION -->
+      <section class="overview-hero-section reveal-section is-revealed" id="overview" aria-label="Overview">
+        <div class="container">
+          <div class="hero-layout-grid">
+            <div class="hero-text-block">
+              <div class="hero-kicker-strip">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                VIT-AP UNIVERSITY PRESENTS
+              </div>
+              <h1 class="hero-primary-headline">CHAKRAVYUH</h1>
+              <div class="hero-cyber-subheading">CYBERSHIELD HACKATHON</div>
+              <div class="hero-core-tagline">BUILD THE DEFENCE. BREAK THE LIMITS.</div>
+              <p class="hero-narrative-lead">
+                Two days. Five technology frontiers. Real-world challenges. Step inside the cyber defence arena to engineer resilient systems and compete for the ₹7,00,000 prize pool.
+              </p>
+              <div class="hero-cta-group">
+                <a href="#chakra" class="btn-hero-primary" onclick="smoothScrollTo('#chakra', event)">
+                  <span>EXPLORE CHAKRA THEMES</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="#mission" class="btn-hero-secondary" onclick="smoothScrollTo('#mission', event)">
+                  <span>WHY PARTICIPATE</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- CIRCULAR CYBER-SHIELD ORB -->
+            <div class="hero-shield-orb-wrap">
+              <div class="radar-ring outer"></div>
+              <div class="radar-ring inner"></div>
+              <div class="circular-shield-orb">
+                <img 
+                  src="/src/assets/images/theme_cyber_server_room_1792211745523.jpg" 
+                  alt="Cyber-Shield Defence System Platform"
+                  class="circular-shield-img"
+                >
+                <div class="circular-shield-overlay"></div>
+              </div>
+              <div class="shield-orb-floating-badge">
+                CYBER DEFENCE SHIELD · ACTIVE
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT FACTS RIBBON -->
+          <div class="facts-capsule-strip">
+            <div class="facts-capsule-grid">
+              <div class="fact-capsule-item">
+                <span class="fact-capsule-label">Event Dates</span>
+                <span class="fact-capsule-value">27–28 October 2026</span>
+              </div>
+              <div class="fact-capsule-item">
+                <span class="fact-capsule-label">Venue</span>
+                <span class="fact-capsule-value">VIT-AP University</span>
+              </div>
+              <div class="fact-capsule-item">
+                <span class="fact-capsule-label">Hackathon Format</span>
+                <span class="fact-capsule-value">Two-Day Offline Sprint</span>
+              </div>
+              <div class="fact-capsule-item">
+                <span class="fact-capsule-label">Total Prize Pool</span>
+                <span class="fact-capsule-value gold tabular-nums">₹7,00,000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANIMATED CYBER-TUNNEL VORTEX ZONE (FROM FIVE FRONTIERS TO FAQS) -->
+      <div class="frontiers-through-faq-zone" id="frontiers-through-faq-zone">
+        <canvas id="cyber-tunnel-canvas" class="cyber-tunnel-canvas" aria-hidden="true"></canvas>
+        <div class="tunnel-scrim-layer"></div>
+
+        <div class="zone-content-relative">
+          <!-- CHAKRA 5-THEME POINTER INFOGRAPHIC STAGE (Matches User's Provided Image) -->
+          <section class="chakra-section reveal-section" id="chakra" aria-label="Five Frontiers">
+            <div class="container">
+              <div class="section-title-wrap">
+                <div class="section-eyebrow-text">Interactive Five Frontiers</div>
+                <h2 class="section-headline">The Chakra Formation</h2>
+                <p class="section-lead-p">
+                  The five technology frontiers surround and converge upon the central rotating Chakra. Hover any theme to reveal its motivational battle cry, or click to enter and explore challenge tiers.
+                </p>
+              </div>
+
+              <div class="chakra-infographic-container">
+                <!-- Circular Arena holding 5 Inward-Pointing Theme Nodes & Central Rotating Chakra -->
+                <div class="infographic-wheel-arena" id="chakra-arena">
+                  
+                  <!-- Dotted Five-Pointed Star & Inward Radar Guide SVG Canvas -->
+                  <svg class="infographic-dotted-guide-svg" viewBox="0 0 680 680" aria-hidden="true">
+                    <defs>
+                      <radialGradient id="chakraInnerAura" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="rgba(88, 225, 255, 0.25)"/>
+                        <stop offset="70%" stop-color="rgba(88, 225, 255, 0.05)"/>
+                        <stop offset="100%" stop-color="rgba(7, 20, 38, 0)"/>
+                      </radialGradient>
+                    </defs>
+
+                    <!-- Concentric Radar Orbit Circles -->
+                    <circle cx="340" cy="340" r="110" fill="url(#chakraInnerAura)" stroke="rgba(88, 225, 255, 0.35)" stroke-width="1.5" stroke-dasharray="3, 4" />
+                    <circle cx="340" cy="340" r="160" fill="none" stroke="rgba(88, 225, 255, 0.25)" stroke-width="1.5" stroke-dasharray="4, 6" />
+                    <circle cx="340" cy="340" r="255" fill="none" stroke="rgba(88, 225, 255, 0.15)" stroke-width="1" stroke-dasharray="6, 8" />
+
+                    <!-- 5-Pointed Star Geometric Lines (Unified Cyan Neon) -->
+                    <!-- Top: (340, 90), Top-Right: (578, 263), Bottom-Right: (487, 542), Bottom-Left: (193, 542), Top-Left: (102, 263) -->
+                    <polygon points="340,90 487,542 102,263 578,263 193,542" fill="none" stroke="#58E1FF" stroke-width="2" stroke-dasharray="5, 5" opacity="0.65" />
+
+                    <!-- Outer Pentagonal Boundary -->
+                    <polygon points="340,90 578,263 487,542 193,542 102,263" fill="none" stroke="rgba(88, 225, 255, 0.25)" stroke-width="1.5" />
+
+                    <!-- Unified Inward Energy Conduit Lines from all 5 Nodes toward Center Chakra -->
+                    <!-- 1. Cyber (Top) -->
+                    <line x1="340" y1="90" x2="340" y2="235" stroke="#58E1FF" stroke-width="2.5" stroke-dasharray="3, 3" opacity="0.85" />
+                    <circle cx="340" cy="235" r="5" fill="#58E1FF" stroke="#FFFFFF" stroke-width="2" />
+
+                    <!-- 2. Space (Top-Right) -->
+                    <line x1="578" y1="263" x2="435" y2="309" stroke="#58E1FF" stroke-width="2.5" stroke-dasharray="3, 3" opacity="0.85" />
+                    <circle cx="435" cy="309" r="5" fill="#58E1FF" stroke="#FFFFFF" stroke-width="2" />
+
+                    <!-- 3. Quantum (Bottom-Right) -->
+                    <line x1="487" y1="542" x2="399" y2="421" stroke="#58E1FF" stroke-width="2.5" stroke-dasharray="3, 3" opacity="0.85" />
+                    <circle cx="399" cy="421" r="5" fill="#58E1FF" stroke="#FFFFFF" stroke-width="2" />
+
+                    <!-- 4. FinTech (Bottom-Left) -->
+                    <line x1="193" y1="542" x2="281" y2="421" stroke="#58E1FF" stroke-width="2.5" stroke-dasharray="3, 3" opacity="0.85" />
+                    <circle cx="281" cy="421" r="5" fill="#58E1FF" stroke="#FFFFFF" stroke-width="2" />
+
+                    <!-- 5. Sustainability (Top-Left) -->
+                    <line x1="102" y1="263" x2="245" y2="309" stroke="#58E1FF" stroke-width="2.5" stroke-dasharray="3, 3" opacity="0.85" />
+                    <circle cx="245" cy="309" r="5" fill="#58E1FF" stroke="#FFFFFF" stroke-width="2" />
+                  </svg>
+
+                  <!-- Central Rotating Chakra Labyrinth Disk -->
+                  <div class="chakra-rotating-center" title="Chakravyuh Rotating Core">
+                    <img src="/src/assets/images/chakra_maze_emblem_1792211775929.jpg" alt="Rotating Chakra Labyrinth" class="chakra-center-wheel-img">
+                  </div>
+
+                  <!-- 1. Top Node: Cybersecurity & Blockchain (Teal/Cyan Pointer) -->
+                  <!-- Uses previous server-room image as requested -->
+                  <div class="infographic-theme-node node-theme-cyber pos-top active" data-theme-key="cybersecurity" tabindex="0" role="button" aria-label="Cybersecurity and Blockchain">
+                    <div class="pointer-base-shell">
+                      <div class="pointer-color-arc"></div>
+                      <div class="inward-pointer-tip"></div>
+                    </div>
+                    <div class="pointer-inner-disc">
+                      <img src="/src/assets/images/theme_cyber_server_room_1792211745523.jpg" alt="Cybersecurity" class="pointer-node-img">
+                      <div class="pointer-node-overlay">
+                        <span class="pointer-node-idx">[01]</span>
+                        <span class="pointer-node-title">Cybersecurity</span>
+                      </div>
+                    </div>
+                    <!-- Motivational Callout Text Box -->
+                    <div class="node-motivational-callout">
+                      <p class="callout-quote-text">BREAK THE ATTACK. PROTECT THE WORLD. BUILD UNBREAKABLE TRUST.</p>
+                    </div>
+                  </div>
+
+                  <!-- 2. Top-Right Node: Space Technology (Purple/Violet Pointer) -->
+                  <div class="infographic-theme-node node-theme-space pos-top-right" data-theme-key="space" tabindex="0" role="button" aria-label="Space Technology">
+                    <div class="pointer-base-shell">
+                      <div class="pointer-color-arc"></div>
+                      <div class="inward-pointer-tip"></div>
+                    </div>
+                    <div class="pointer-inner-disc">
+                      <img src="/src/assets/images/theme_space_satellite_1792211745140.jpg" alt="Space Tech" class="pointer-node-img">
+                      <div class="pointer-node-overlay">
+                        <span class="pointer-node-idx">[02]</span>
+                        <span class="pointer-node-title">Space Tech</span>
+                      </div>
+                    </div>
+                    <!-- Motivational Callout Text Box -->
+                    <div class="node-motivational-callout">
+                      <p class="callout-quote-text">DON'T JUST LOOK AT THE STARS. BUILD THE TECHNOLOGY THAT TAKES US THERE.</p>
+                    </div>
+                  </div>
+
+                  <!-- 3. Bottom-Right Node: Quantum Computing (Amber/Yellow Pointer) -->
+                  <div class="infographic-theme-node node-theme-quantum pos-bottom-right" data-theme-key="quantum" tabindex="0" role="button" aria-label="Quantum Computing">
+                    <div class="pointer-base-shell">
+                      <div class="pointer-color-arc"></div>
+                      <div class="inward-pointer-tip"></div>
+                    </div>
+                    <div class="pointer-inner-disc">
+                      <img src="/src/assets/images/theme_quantum_chip_1792211746846.jpg" alt="Quantum" class="pointer-node-img">
+                      <div class="pointer-node-overlay">
+                        <span class="pointer-node-idx">[03]</span>
+                        <span class="pointer-node-title">Quantum</span>
+                      </div>
+                    </div>
+                    <!-- Motivational Callout Text Box -->
+                    <div class="node-motivational-callout">
+                      <p class="callout-quote-text">CHALLENGE THE LIMITS OF COMPUTATION. SOLVE WHAT ONCE SEEMED IMPOSSIBLE.</p>
+                    </div>
+                  </div>
+
+                  <!-- 4. Bottom-Left Node: FinTech (Coral/Red Pointer) -->
+                  <div class="infographic-theme-node node-theme-fintech pos-bottom-left" data-theme-key="fintech" tabindex="0" role="button" aria-label="FinTech">
+                    <div class="pointer-base-shell">
+                      <div class="pointer-color-arc"></div>
+                      <div class="inward-pointer-tip"></div>
+                    </div>
+                    <div class="pointer-inner-disc">
+                      <img src="/src/assets/images/theme_fintech_payment_1792211744391.jpg" alt="FinTech" class="pointer-node-img">
+                      <div class="pointer-node-overlay">
+                        <span class="pointer-node-idx">[04]</span>
+                        <span class="pointer-node-title">FinTech</span>
+                      </div>
+                    </div>
+                    <!-- Motivational Callout Text Box -->
+                    <div class="node-motivational-callout">
+                      <p class="callout-quote-text">MAKE MONEY SMARTER. MAKE TRANSACTIONS SAFER. MAKE OPPORTUNITY ACCESSIBLE.</p>
+                    </div>
+                  </div>
+
+                  <!-- 5. Top-Left Node: Energy & Sustainability (Slate/Steel Pointer) -->
+                  <div class="infographic-theme-node node-theme-sustainability pos-top-left" data-theme-key="sustainability" tabindex="0" role="button" aria-label="Energy and Sustainability">
+                    <div class="pointer-base-shell">
+                      <div class="pointer-color-arc"></div>
+                      <div class="inward-pointer-tip"></div>
+                    </div>
+                    <div class="pointer-inner-disc">
+                      <img src="/src/assets/images/theme_sustainability_grid_1792211746205.jpg" alt="Sustainability" class="pointer-node-img">
+                      <div class="pointer-node-overlay">
+                        <span class="pointer-node-idx">[05]</span>
+                        <span class="pointer-node-title">Sustainability</span>
+                      </div>
+                    </div>
+                    <!-- Motivational Callout Text Box -->
+                    <div class="node-motivational-callout">
+                      <p class="callout-quote-text">CODE FOR THE PLANET. ENGINEER A CLEANER FUTURE. MAKE EVERY WATT COUNT.</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Theme Spotlight Preview Panel Below Arena -->
+                <div class="chakra-preview-box" id="chakra-preview-panel">
+                  <div class="preview-img-container">
+                    <img id="chakra-spotlight-img" src="/src/assets/images/theme_cyber_server_room_1792211745523.jpg" alt="Theme visual">
+                  </div>
+                  <div class="preview-content-area">
+                    <div class="preview-tag-line" id="chakra-spotlight-kicker">THEME 01 · CYBERSECURITY &amp; BLOCKCHAIN</div>
+                    <h3 class="preview-heading-title" id="chakra-spotlight-title">DEFEND THE DIGITAL FRONTIER</h3>
+                    <div class="preview-motivational-quote-bar" id="chakra-spotlight-quote">
+                      BREAK THE ATTACK. PROTECT THE WORLD. BUILD UNBREAKABLE TRUST.
+                    </div>
+                    <p class="preview-desc-body" id="chakra-spotlight-desc">
+                      Secure systems. Trusted transactions. Protect critical networks, identities, cloud workloads, and smart-contract rails.
+                    </p>
+                  </div>
+                  <button class="btn-enter-theme" id="chakra-spotlight-btn" onclick="openSelectedTheme()">
+                    <span>ENTER FRONTIER</span>
+                    <span>→</span>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- WHY PARTICIPATE SECTION -->
+          <section class="mission-section reveal-section" id="mission" aria-label="Why Participate">
+            <div class="container">
+              <div class="section-title-wrap">
+                <div class="section-eyebrow-text">The Mission</div>
+                <h2 class="section-headline">Why Participate in Chakravyuh</h2>
+                <p class="section-lead-p">
+                  Chakravyuh is designed for builders, researchers, and innovators ready to tackle authentic industry challenges.
+                </p>
+              </div>
+
+              <div class="mission-grid">
+                <!-- 1. Build Real Solutions -->
+                <div class="mission-card">
+                  <svg class="mission-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                    <path d="M2 2l7.586 7.586"/>
+                    <circle cx="11" cy="11" r="2"/>
+                  </svg>
+                  <h3 class="mission-title">Build Real Solutions</h3>
+                  <p class="mission-desc">Work on practical technology challenges drawn from actual industry and research problem spaces — not toy exercises.</p>
+                </div>
+
+                <!-- 2. Explore Emerging Technology -->
+                <div class="mission-card">
+                  <svg class="mission-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                  <h3 class="mission-title">Explore Emerging Technology</h3>
+                  <p class="mission-desc">Discover five distinct technical domains — from cyber-defence and blockchain to quantum computing and orbital systems.</p>
+                </div>
+
+                <!-- 3. Showcase Your Approach -->
+                <div class="mission-card">
+                  <svg class="mission-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                  <h3 class="mission-title">Showcase Your Approach</h3>
+                  <p class="mission-desc">Demonstrate problem-solving, implementation, and technical reasoning to judges, mentors, and industry observers.</p>
+                </div>
+
+                <!-- 4. Compete and Collaborate -->
+                <div class="mission-card">
+                  <svg class="mission-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                  <h3 class="mission-title">Compete and Collaborate</h3>
+                  <p class="mission-desc">Develop and present solutions during an intense two-day offline hackathon at VIT-AP University.</p>
+                </div>
+
+                <!-- 5. Defend What Matters -->
+                <div class="mission-card">
+                  <svg class="mission-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                  <h3 class="mission-title">Defend What Matters</h3>
+                  <p class="mission-desc">Chakravyuh is a battle formation. Here, you defend digital infrastructure, financial systems, and critical networks.</p>
+                </div>
+
+                <!-- 6. ₹7,00,000 Prize Pool -->
+                <div class="mission-card">
+                  <svg class="mission-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                  </svg>
+                  <h3 class="mission-title">₹7,00,000 Prize Pool</h3>
+                  <p class="mission-desc">Compete for a stated prize pool across Flagship, Medium, and Easy challenge tracks in every theme.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- TWO-DAY TIMELINE SECTION -->
+          <section class="timeline-operation-section reveal-section" id="timeline" aria-label="Two-Day Timeline">
+            <div class="container">
+              <div class="section-title-wrap">
+                <div class="section-eyebrow-text">The Operation</div>
+                <h2 class="section-headline">Two-Day Timeline</h2>
+                <p class="section-lead-p">
+                  The high-level execution roadmap for the 27–28 October 2026 hackathon.
+                </p>
+              </div>
+
+              <div class="timeline-flow-container">
+                <div class="timeline-flow-line"></div>
+
+                <!-- Day 01 -->
+                <div class="timeline-entry">
+                  <div class="timeline-diamond">
+                    <div class="timeline-diamond-inner"></div>
+                  </div>
+                  <div class="timeline-content-card">
+                    <div class="timeline-phase-tag">Deployment Phase</div>
+                    <h3 class="timeline-day-header">DAY 01 — 27 OCTOBER</h3>
+                    <p class="timeline-narrative">
+                      Opening and orientation · problem exploration · team development and initial builds. Teams select their front, analyse problem statements, and begin implementation.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Day 02 -->
+                <div class="timeline-entry">
+                  <div class="timeline-diamond">
+                    <div class="timeline-diamond-inner"></div>
+                  </div>
+                  <div class="timeline-content-card">
+                    <div class="timeline-phase-tag">The Breakthrough</div>
+                    <h3 class="timeline-day-header">DAY 02 — 28 OCTOBER</h3>
+                    <p class="timeline-narrative">
+                      Final implementation · project demonstrations · judging and valedictory. Teams finalise prototypes, present their solutions, and defend their approach before the evaluation panel.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Notice Box -->
+                <div class="timeline-notice-box">
+                  Detailed hour-by-hour schedule: To be announced by the organising committee.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- PARTNERS & SPONSORS -->
+          <section class="partners-section-wrap reveal-section" id="partners" aria-label="Partners and Collaborators">
+            <div class="container">
+              <div class="section-title-wrap">
+                <div class="section-eyebrow-text">Institutional Network</div>
+                <h2 class="section-headline">Partners &amp; Collaborators</h2>
+                <p class="section-lead-p">
+                  Official collaborators and institutional partners supporting the Chakravyuh Cybershield Hackathon.
+                </p>
+              </div>
+
+              <div class="partner-grid-tiles">
+                <div class="partner-tile">
+                  <span class="partner-title-name">VIT-AP University</span>
+                  <span class="partner-desc-role">Host Institution</span>
+                </div>
+                <div class="partner-tile">
+                  <span class="partner-title-name">Unstop</span>
+                  <span class="partner-desc-role">Powered By</span>
+                </div>
+                <div class="partner-tile">
+                  <span class="partner-title-name">Pocket Lab</span>
+                  <span class="partner-desc-role">Technical Partner</span>
+                </div>
+                <div class="partner-tile">
+                  <span class="partner-title-name">Qualium AI</span>
+                  <span class="partner-desc-role">Platinum Sponsor</span>
+                </div>
+                <div class="partner-tile">
+                  <span class="partner-title-name">Notion</span>
+                  <span class="partner-desc-role">Creative Partner</span>
+                </div>
+                <div class="partner-tile">
+                  <span class="partner-title-name">NEP Saarthi</span>
+                  <span class="partner-desc-role">Organiser · NEP 2020</span>
+                </div>
+                <div class="partner-tile">
+                  <span class="partner-title-name">VISH</span>
+                  <span class="partner-desc-role">Collaboration Partner</span>
+                </div>
+                <div class="partner-tile">
+                  <span class="partner-title-name">Innovators Quest</span>
+                  <span class="partner-desc-role">ACS · IIEC VIT-AP</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- FREQUENTLY ASKED QUESTIONS -->
+          <section class="faq-section-wrap reveal-section" id="faq" style="padding: 6rem 0;" aria-label="FAQ">
+            <div class="container">
+              <div class="section-title-wrap">
+                <div class="section-eyebrow-text">Event Inquiries</div>
+                <h2 class="section-headline">Frequently Asked Questions</h2>
+                <p class="section-lead-p">
+                  Essential answers regarding team eligibility, registration schedule, and challenge architecture.
+                </p>
+              </div>
+
+              <div class="faq-list-wrap">
+                <details class="faq-toggle-item" open>
+                  <summary class="faq-toggle-question">
+                    <span>What is CHAKRAVYUH?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="faq-toggle-answer">
+                    CHAKRAVYUH: CYBERSHIELD HACKATHON is the largest offline hackathon at VIT-AP University, bringing together student developers to design cyber-resilient solutions across five technology frontiers.
+                  </div>
+                </details>
+
+                <details class="faq-toggle-item">
+                  <summary class="faq-toggle-question">
+                    <span>When and where is the event conducted?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="faq-toggle-answer">
+                    The hackathon is conducted offline on 27–28 October 2026 at the VIT-AP University campus near Amaravati / Vijayawada.
+                  </div>
+                </details>
+
+                <details class="faq-toggle-item">
+                  <summary class="faq-toggle-question">
+                    <span>What are the three challenge tiers (Flagship, Medium, Easy)?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="faq-toggle-answer">
+                    Each of the five frontiers offers three distinct difficulty tiers: Flagship (advanced, high-impact architecture), Medium (applied problem-solving), and Easy (foundational challenges).
+                  </div>
+                </details>
+
+                <details class="faq-toggle-item">
+                  <summary class="faq-toggle-question">
+                    <span>Is On-Duty (OD) leave provided for participants?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </summary>
+                  <div class="faq-toggle-answer">
+                    Yes, official On-Duty (OD) attendance approval is provided for all confirmed participating students.
+                  </div>
+                </details>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- DEDICATED THEME PAGE VIEW -->
+    <main id="theme-page-view" class="theme-fullpage-view" aria-label="Theme Details">
+      <div class="theme-fullpage-backdrop-overlay" id="theme-page-overlay"></div>
+
+      <div class="container theme-page-container">
+        <!-- Back to Home Button -->
+        <button class="btn-back-to-home" onclick="navigateToHome(event)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Return to Chakravyuh Home</span>
+        </button>
+
+        <!-- Theme Header Banner -->
+        <div class="theme-header-banner" id="theme-banner-box">
+          <div class="theme-banner-content">
+            <div class="theme-banner-tag" id="theme-badge-label">THEME 01 · CYBERSECURITY &amp; BLOCKCHAIN</div>
+            <h1 class="theme-banner-title" id="theme-headline">DEFEND THE DIGITAL FRONTIER</h1>
+            <div class="preview-motivational-quote-bar" id="theme-banner-quote" style="font-size: 1rem; margin: 0.25rem 0 0.5rem;">
+              BREAK THE ATTACK. PROTECT THE WORLD. BUILD UNBREAKABLE TRUST.
+            </div>
+            <p class="theme-banner-desc" id="theme-paragraph">
+              Secure systems. Trusted transactions. Protect the critical networks, identities, and smart-contract rails that power our connected future.
+            </p>
+          </div>
+          <div class="theme-banner-visual-box">
+            <img id="theme-banner-img" src="/src/assets/images/theme_cyber_server_room_1792211745523.jpg" alt="Theme Banner Visual">
+          </div>
+        </div>
+
+        <!-- THREE DIFFICULTY LEVELS SELECTOR (Flagship, Medium, Easy) -->
+        <div class="section-title-wrap" style="text-align: left; margin-bottom: 1.5rem;">
+          <div class="section-eyebrow-text">Challenge Difficulty Tiers</div>
+          <h2 class="section-headline" style="font-size: 2rem;">Select Problem Statement Level</h2>
+        </div>
+
+        <div class="levels-selection-bar" role="tablist">
+          <!-- Flagship -->
+          <button class="level-tab-btn active" id="btn-lvl-flagship" onclick="switchThemeProblemLevel('flagship')">
+            <div class="level-tab-num">01 — FLAGSHIP</div>
+            <div class="level-tab-desc">Advanced high-impact architecture</div>
+          </button>
+
+          <!-- Medium -->
+          <button class="level-tab-btn" id="btn-lvl-medium" onclick="switchThemeProblemLevel('medium')">
+            <div class="level-tab-num">02 — MEDIUM</div>
+            <div class="level-tab-desc">Applied practical problem-solving</div>
+          </button>
+
+          <!-- Easy -->
+          <button class="level-tab-btn" id="btn-lvl-easy" onclick="switchThemeProblemLevel('easy')">
+            <div class="level-tab-num">03 — EASY</div>
+            <div class="level-tab-desc">Foundational algorithmic &amp; UI challenges</div>
+          </button>
+        </div>
+
+        <!-- Problems Container for Selected Level -->
+        <div class="theme-challenges-grid" id="theme-problems-list">
+          <!-- Dynamically populated by JavaScript -->
+        </div>
+
+        <!-- Quick Switcher to Other 4 Themes -->
+        <div class="theme-quick-switch-strip">
+          <div class="section-eyebrow-text">Switch Frontier</div>
+          <div class="quick-switch-grid" id="quick-switch-grid">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- CHALLENGE DETAIL MODAL -->
+  <div class="challenge-modal-backdrop" id="challenge-detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-problem-name">
+    <div class="challenge-modal-dialog">
+      <div class="modal-head-row">
+        <div>
+          <div class="challenge-id-badge" id="modal-problem-id">CYB-F-01</div>
+          <h3 class="challenge-card-title" id="modal-problem-name" style="font-size: 1.4rem; margin-top: 0.25rem;">Problem Title</h3>
+        </div>
+        <button class="modal-close-icon-btn" onclick="closeChallengeModal()" aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div>
+        <div class="modal-field-title">Problem Statement</div>
+        <p id="modal-problem-summary" style="color: var(--steel-blue); line-height: 1.6;"></p>
+      </div>
+
+      <div>
+        <div class="modal-field-title">Real-World Context</div>
+        <p id="modal-problem-context" style="color: var(--steel-blue); line-height: 1.6;"></p>
+      </div>
+
+      <div>
+        <div class="modal-field-title">Expected Deliverables</div>
+        <ul class="modal-bullet-list" id="modal-problem-outcomes"></ul>
+      </div>
+
+      <div>
+        <div class="modal-field-title">Suggested Technologies</div>
+        <div class="tools-tag-row" id="modal-problem-tools" style="margin-top: 0.35rem;"></div>
+      </div>
+
+      <div>
+        <div class="modal-field-title">Implementation Guidance</div>
+        <ul class="modal-bullet-list" id="modal-problem-guidance"></ul>
+      </div>
+
+      <div>
+        <div class="modal-field-title">Evaluation Criteria</div>
+        <ul class="modal-bullet-list" id="modal-problem-eval"></ul>
+      </div>
+
+      <div style="border-top: 1px solid rgba(40, 123, 255, 0.2); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.75rem; color: var(--gold-signal); font-weight: 600;">STATUS: DRAFT SPECIFICATION</span>
+        <button class="btn-dock-cta" onclick="closeChallengeModal()">Close Specification</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-columns">
+        <div>
+          <a href="index.html" class="nav-brand" style="margin-bottom: 0.85rem; display: inline-flex;">
+            <svg class="nav-shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>CHAKRAVYUH</span>
+          </a>
+          <p style="font-size: 0.88rem; color: var(--steel-blue); line-height: 1.6; max-width: 380px;">
+            CHAKRAVYUH: CYBERSHIELD HACKATHON hosted at VIT-AP University. 27–28 October 2026. Two-day offline hackathon with a ₹7,00,000 prize pool.
+          </p>
+        </div>
+
+        <div>
+          <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; color: var(--white-ice); margin-bottom: 1rem; text-transform: uppercase;">
+            The Five Frontiers
+          </div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.85rem; color: var(--steel-blue);">
+            <li><a href="?theme=cybersecurity" onclick="navigateToTheme('cybersecurity', event)">[01] Cybersecurity &amp; Blockchain</a></li>
+            <li><a href="?theme=space" onclick="navigateToTheme('space', event)">[02] Space Technology</a></li>
+            <li><a href="?theme=quantum" onclick="navigateToTheme('quantum', event)">[03] Quantum Computing</a></li>
+            <li><a href="?theme=fintech" onclick="navigateToTheme('fintech', event)">[04] FinTech</a></li>
+            <li><a href="?theme=sustainability" onclick="navigateToTheme('sustainability', event)">[05] Energy &amp; Sustainability</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; color: var(--white-ice); margin-bottom: 1rem; text-transform: uppercase;">
+            Navigation
+          </div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.85rem; color: var(--steel-blue);">
+            <li><a href="#overview" onclick="smoothScrollTo('#overview', event)">Overview</a></li>
+            <li><a href="#chakra" onclick="smoothScrollTo('#chakra', event)">The Chakra Formation</a></li>
+            <li><a href="#mission" onclick="smoothScrollTo('#mission', event)">The Mission</a></li>
+            <li><a href="#timeline" onclick="smoothScrollTo('#timeline', event)">Operation Timeline</a></li>
+            <li><a href="#partners" onclick="smoothScrollTo('#partners', event)">Partners</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 VIT-AP University · CHAKRAVYUH CYBERSHIELD HACKATHON. All rights reserved.</div>
+        <div style="display: flex; gap: 1rem;">
+          <span>Host: VIT-AP University</span>
+          <span>·</span>
+          <span>Powered by Unstop</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT: CYBER-TUNNEL ANIMATION, 5-THEME POINTER INFOGRAPHIC & LEVEL LOGIC -->
+  <script>
+    /* ========================================================
+       1. ANIMATED CYBER-TUNNEL BACKDROP
+       ======================================================== */
+    const tunnelCanvas = document.getElementById('cyber-tunnel-canvas');
+    const tunnelZone = document.getElementById('frontiers-through-faq-zone');
+    let tunnelCtx = null;
+    let animId = null;
+    let tunnelWidth = 0;
+    let tunnelHeight = 0;
+
+    const RING_COUNT = 14;
+    const TRACK_COUNT = 20;
+    let rotationAngle = 0;
+    let tunnelDepthOffset = 0;
+
+    const dataPackets = [];
+    const PACKET_COUNT = 45;
+
+    function initCyberTunnel() {
+      if (!tunnelCanvas || !tunnelZone) return;
+      tunnelCtx = tunnelCanvas.getContext('2d');
+      resizeCyberTunnel();
+      window.addEventListener('resize', resizeCyberTunnel);
+
+      for (let i = 0; i < PACKET_COUNT; i++) {
+        resetPacket(i);
+        dataPackets[i].progress = Math.random();
+      }
+
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        animId = requestAnimationFrame(renderCyberTunnelLoop);
+      } else {
+        renderStaticTunnel();
+      }
+    }
+
+    function resetPacket(i) {
+      dataPackets[i] = {
+        track: Math.floor(Math.random() * TRACK_COUNT),
+        progress: 0,
+        speed: 0.003 + Math.random() * 0.005,
+        length: 20 + Math.random() * 40,
+        cyanColor: Math.random() > 0.3 ? '#58E1FF' : '#287BFF'
+      };
+    }
+
+    function resizeCyberTunnel() {
+      if (!tunnelCanvas || !tunnelZone) return;
+      tunnelWidth = tunnelZone.clientWidth;
+      tunnelHeight = tunnelZone.clientHeight;
+      tunnelCanvas.width = tunnelWidth;
+      tunnelCanvas.height = tunnelHeight;
+    }
+
+    function renderCyberTunnelLoop() {
+      if (!tunnelCtx) return;
+
+      tunnelCtx.clearRect(0, 0, tunnelWidth, tunnelHeight);
+
+      const centerX = tunnelWidth * 0.5;
+      const centerY = Math.min(tunnelHeight * 0.22, 600);
+      const maxRadius = Math.hypot(tunnelWidth, tunnelHeight) * 0.65;
+
+      rotationAngle += 0.0018;
+      tunnelDepthOffset = (tunnelDepthOffset + 0.0022) % 1;
+
+      // Radial tracks
+      tunnelCtx.save();
+      for (let i = 0; i < TRACK_COUNT; i++) {
+        const angle = (i / TRACK_COUNT) * Math.PI * 2 + rotationAngle * 0.4;
+        const cos = Math.cos(angle);
+        const sin = Math.sin(angle);
+        const innerR = 40;
+        const outerR = maxRadius;
+
+        tunnelCtx.beginPath();
+        tunnelCtx.moveTo(centerX + cos * innerR, centerY + sin * innerR);
+        tunnelCtx.lineTo(centerX + cos * outerR, centerY + sin * outerR);
+        tunnelCtx.strokeStyle = (i % 2 === 0) ? 'rgba(40, 123, 255, 0.16)' : 'rgba(88, 225, 255, 0.09)';
+        tunnelCtx.lineWidth = (i % 4 === 0) ? 2 : 1;
+        tunnelCtx.stroke();
+      }
+      tunnelCtx.restore();
+
+      // Concentric rings
+      tunnelCtx.save();
+      for (let i = 0; i < RING_COUNT; i++) {
+        const t = ((i / RING_COUNT) + tunnelDepthOffset) % 1;
+        const r = 40 + Math.pow(t, 2.4) * maxRadius;
+        const alpha = Math.sin(t * Math.PI) * 0.42;
+
+        if (r < 40 || r > maxRadius) continue;
+
+        tunnelCtx.beginPath();
+        tunnelCtx.arc(centerX, centerY, r, 0, Math.PI * 2);
+        tunnelCtx.strokeStyle = `rgba(88, 225, 255, ${alpha})`;
+        tunnelCtx.lineWidth = 1 + t * 2.5;
+
+        if (i % 2 === 0) {
+          tunnelCtx.setLineDash([12 * (1 + t), 16 * (1 + t), 4 * (1 + t), 16 * (1 + t)]);
+        } else {
+          tunnelCtx.setLineDash([30 * (1 + t), 20 * (1 + t)]);
+        }
+        tunnelCtx.stroke();
+      }
+      tunnelCtx.restore();
+
+      // Streaming data packets
+      tunnelCtx.save();
+      for (let i = 0; i < PACKET_COUNT; i++) {
+        const p = dataPackets[i];
+        p.progress += p.speed;
+        if (p.progress >= 1) resetPacket(i);
+
+        const angle = (p.track / TRACK_COUNT) * Math.PI * 2 + rotationAngle * 0.4;
+        const cos = Math.cos(angle);
+        const sin = Math.sin(angle);
+
+        const t = p.progress;
+        const currentR = 50 + Math.pow(t, 2.2) * maxRadius;
+        const trailR = Math.max(45, currentR - p.length * (1 + t));
+
+        const x1 = centerX + cos * trailR;
+        const y1 = centerY + sin * trailR;
+        const x2 = centerX + cos * currentR;
+        const y2 = centerY + sin * currentR;
+
+        const packetAlpha = Math.sin(t * Math.PI) * 0.85;
+
+        const grad = tunnelCtx.createLinearGradient(x1, y1, x2, y2);
+        grad.addColorStop(0, 'rgba(40, 123, 255, 0)');
+        grad.addColorStop(1, p.cyanColor);
+
+        tunnelCtx.beginPath();
+        tunnelCtx.moveTo(x1, y1);
+        tunnelCtx.lineTo(x2, y2);
+        tunnelCtx.strokeStyle = grad;
+        tunnelCtx.lineWidth = 2 + t * 3;
+        tunnelCtx.lineCap = 'round';
+        tunnelCtx.stroke();
+
+        tunnelCtx.beginPath();
+        tunnelCtx.arc(x2, y2, 2.5 + t * 2, 0, Math.PI * 2);
+        tunnelCtx.fillStyle = `rgba(255, 255, 255, ${packetAlpha})`;
+        tunnelCtx.fill();
+      }
+      tunnelCtx.restore();
+
+      animId = requestAnimationFrame(renderCyberTunnelLoop);
+    }
+
+    function renderStaticTunnel() {
+      if (!tunnelCtx) return;
+      const centerX = tunnelWidth * 0.5;
+      const centerY = Math.min(tunnelHeight * 0.22, 600);
+      const maxRadius = Math.hypot(tunnelWidth, tunnelHeight) * 0.65;
+
+      for (let i = 0; i < 8; i++) {
+        const r = 50 + (i / 8) * maxRadius;
+        tunnelCtx.beginPath();
+        tunnelCtx.arc(centerX, centerY, r, 0, Math.PI * 2);
+        tunnelCtx.strokeStyle = 'rgba(88, 225, 255, 0.25)';
+        tunnelCtx.lineWidth = 1.5;
+        tunnelCtx.stroke();
+      }
+    }
+
+    /* ========================================================
+       2. THEME CONFIGURATION WITH EXACT USER MOTIVATIONAL QUOTES
+       ======================================================== */
+    const THEMES_CONFIG = {
+      cybersecurity: {
+        id: "cybersecurity",
+        number: "01",
+        label: "CYBERSECURITY & BLOCKCHAIN",
+        title: "DEFEND THE DIGITAL FRONTIER",
+        subtitle: "Secure systems. Trusted transactions. Protect critical networks, identities, cloud workloads, and smart-contract rails.",
+        motivationalQuote: "BREAK THE ATTACK. PROTECT THE WORLD. BUILD UNBREAKABLE TRUST.",
+        // Previous image restored for circle in frontier section as requested
+        frontierImg: "/src/assets/images/theme_cyber_server_room_1792211745523.jpg",
+        heroBg: "/src/assets/images/theme_cyber_server_room_1792211745523.jpg",
+        overlayGradient: "linear-gradient(180deg, rgba(7, 20, 38, 0.72) 0%, rgba(7, 20, 38, 0.92) 100%)",
+        accent: "#00A8B5",
+        glow: "#58E1FF"
+      },
+      space: {
+        id: "space",
+        number: "02",
+        label: "SPACE TECHNOLOGY",
+        title: "ENGINEER BEYOND EARTH",
+        subtitle: "Explore beyond. Build for tomorrow. Transform satellite telemetry, orbital navigation, and Earth remote sensing into practical tools.",
+        motivationalQuote: "DON'T JUST LOOK AT THE STARS. BUILD THE TECHNOLOGY THAT TAKES US THERE.",
+        frontierImg: "/src/assets/images/theme_space_satellite_1792211745140.jpg",
+        heroBg: "/src/assets/images/theme_space_satellite_1792211745140.jpg",
+        overlayGradient: "linear-gradient(180deg, rgba(6, 15, 33, 0.72) 0%, rgba(10, 20, 48, 0.92) 100%)",
+        accent: "#8E3B87",
+        glow: "#B548A9"
+      },
+      quantum: {
+        id: "quantum",
+        number: "03",
+        label: "QUANTUM COMPUTING",
+        title: "COMPUTE BEYOND CONVENTION",
+        subtitle: "Smarter qubits. Bigger possibilities. Investigate quantum-inspired optimization, superposition visualizers, and state simulation algorithms.",
+        motivationalQuote: "CHALLENGE THE LIMITS OF COMPUTATION. SOLVE WHAT ONCE SEEMED IMPOSSIBLE.",
+        frontierImg: "/src/assets/images/theme_quantum_chip_1792211746846.jpg",
+        heroBg: "/src/assets/images/theme_quantum_chip_1792211746846.jpg",
+        overlayGradient: "linear-gradient(180deg, rgba(16, 7, 36, 0.75) 0%, rgba(10, 15, 45, 0.94) 100%)",
+        accent: "#F4A228",
+        glow: "#F5BD55"
+      },
+      fintech: {
+        id: "fintech",
+        number: "04",
+        label: "FINTECH",
+        title: "REIMAGINE DIGITAL FINANCE",
+        subtitle: "Smarter finance. Greater access. Construct high-throughput fraud detection, biometric transaction flows, and inclusive credit analytics.",
+        motivationalQuote: "MAKE MONEY SMARTER. MAKE TRANSACTIONS SAFER. MAKE OPPORTUNITY ACCESSIBLE.",
+        frontierImg: "/src/assets/images/theme_fintech_payment_1792211744391.jpg",
+        heroBg: "/src/assets/images/theme_fintech_payment_1792211744391.jpg",
+        overlayGradient: "linear-gradient(180deg, rgba(4, 25, 32, 0.75) 0%, rgba(7, 20, 38, 0.92) 100%)",
+        accent: "#F05A54",
+        glow: "#FF6B6B"
+      },
+      sustainability: {
+        id: "sustainability",
+        number: "05",
+        label: "ENERGY & SUSTAINABILITY",
+        title: "POWER A BETTER TOMORROW",
+        subtitle: "Clean energy. A sustainable future. Develop predictive solar/wind forecasting, smart grid balancing, and transparent carbon accounting.",
+        motivationalQuote: "CODE FOR THE PLANET. ENGINEER A CLEANER FUTURE. MAKE EVERY WATT COUNT.",
+        frontierImg: "/src/assets/images/theme_sustainability_grid_1792211746205.jpg",
+        heroBg: "/src/assets/images/theme_sustainability_grid_1792211746205.jpg",
+        overlayGradient: "linear-gradient(180deg, rgba(12, 28, 22, 0.75) 0%, rgba(7, 20, 38, 0.92) 100%)",
+        accent: "#4F6272",
+        glow: "#58E1FF"
+      }
+    };
+
+    /* ========================================================
+       3. STRUCTURED PROBLEM STATEMENTS FOR ALL 5 THEMES & 3 TIERS
+       ======================================================== */
+    const CHALLENGES_DATABASE = [
+      /* Cybersecurity */
+      {
+        id: "CYB-F-01",
+        theme: "cybersecurity",
+        level: "flagship",
+        title: "Intelligent Cyber Threat Detection & Real-time Mitigation",
+        summary: "Develop a real-time behavioral anomaly detection engine for corporate network traffic that pinpoints lateral movement, zero-day intrusion vectors, and automated botnet probing.",
+        realWorldContext: "Modern enterprise environments face advanced persistent threats (APTs) that bypass signature firewalls by blending with legitimate admin traffic.",
+        expectedOutcome: [
+          "Real-time packet inspection and feature extraction engine",
+          "Explainable machine learning scoring identifying anomalous socket behavior",
+          "Interactive SOC triage dashboard with incident severity breakdown"
+        ],
+        suggestedTools: ["Python", "FastAPI", "scikit-learn", "Suricata", "Zeek", "Docker"],
+        implementationGuidance: [
+          "Ingest live or recorded PCAP/NetFlow log streams.",
+          "Extract statistical session features (timing, byte entropy, flow duration).",
+          "Train isolation forests to detect anomalous deviations."
+        ],
+        evaluationCriteria: [
+          "Detection accuracy and false-positive suppression rate",
+          "Packet parsing throughput and notification latency",
+          "Clarity of SOC incident visualization"
+        ]
+      },
+      {
+        id: "CYB-F-02",
+        theme: "cybersecurity",
+        level: "flagship",
+        title: "Secure Smart-Contract Vulnerability & Reentrancy Analysis",
+        summary: "Construct an automated static and dynamic audit tool that scans EVM smart contracts for reentrancy, integer overflows, and front-running risks.",
+        realWorldContext: "Decentralized finance protocols have lost billions due to subtle reentrancy and access-control oversights in contract code.",
+        expectedOutcome: [
+          "AST parser and bytecode analyzer for Solidity contracts",
+          "Automated detection of standard SWC (Smart Contract Weakness) patterns",
+          "Detailed remediation report with patched code snippets"
+        ],
+        suggestedTools: ["Solidity", "Slither", "Foundry", "Rust", "Python"],
+        implementationGuidance: [
+          "Parse contract Abstract Syntax Tree (AST).",
+          "Verify state changes before external calls (checks-effects-interactions).",
+          "Simulate transactions in a local testnet fork."
+        ],
+        evaluationCriteria: ["Breadth of detected vulnerability signatures", "Actionability of remediation suggestions", "Audit speed"]
+      },
+      {
+        id: "CYB-M-01",
+        theme: "cybersecurity",
+        level: "medium",
+        title: "Phishing URL Risk Classification & Domain Age Auditor",
+        summary: "Build an ML-powered browser extension and API that evaluates web addresses, DNS registration age, and DOM heuristics to detect deceptive phishing portals.",
+        realWorldContext: "Spear-phishing campaigns rapidly register typosquatting domains that stay active just long enough to harvest credentials.",
+        expectedOutcome: [
+          "Lightweight URL reputation classifier",
+          "Domain WHOIS and SSL certificate age verification module",
+          "Browser banner warning users before entering sensitive credentials"
+        ],
+        suggestedTools: ["Python", "Flask", "XGBoost", "JavaScript WebExtension"],
+        implementationGuidance: ["Analyze URL lexical patterns.", "Query DNS resolution time and SSL validity.", "Provide intuitive risk tiering."],
+        evaluationCriteria: ["Classification accuracy", "Inference speed under 80ms", "Extension UI clarity"]
+      },
+      {
+        id: "CYB-M-02",
+        theme: "cybersecurity",
+        level: "medium",
+        title: "Blockchain Transaction Anomaly & Mixer Explorer",
+        summary: "Create an open ledger transaction monitor that detects tumbling, mixing, or sudden wash-trading volumes across tracked wallet addresses.",
+        realWorldContext: "Compliance teams and investigators require visual tools to trace illicit token movements across complex token swaps.",
+        expectedOutcome: [
+          "Graph visualization of wallet fund transfers",
+          "Anomaly alert for cyclic transactions or high-velocity splitting",
+          "Address risk scoring module"
+        ],
+        suggestedTools: ["Ethers.js", "D3.js", "Node.js", "WebSockets"],
+        implementationGuidance: ["Listen to pending/confirmed transactions via public RPC.", "Construct directed graph of sender-receiver relationships.", "Highlight suspicious clusters."],
+        evaluationCriteria: ["Graph rendering responsiveness", "Pattern detection logic", "Clarity of risk heuristics"]
+      },
+      {
+        id: "CYB-E-01",
+        theme: "cybersecurity",
+        level: "easy",
+        title: "Password Strength, Entropy & Breach Auditor",
+        summary: "Develop a client-side password entropy evaluator and breach auditor that checks credentials against compromised dictionary hashes without exposing secrets.",
+        realWorldContext: "Users regularly reuse weak passwords due to lack of immediate, actionable feedback on cracking complexity.",
+        expectedOutcome: [
+          "Entropy calculator based on character diversity and pattern dictionaries",
+          "k-Anonymity API integration with HaveIBeenPwned hash ranges",
+          "Interactive password generation assistant"
+        ],
+        suggestedTools: ["HTML5", "Vanilla JavaScript", "Web Crypto API", "CSS"],
+        implementationGuidance: ["Calculate Shannon entropy and crack-time approximations.", "Hash password with SHA-1 client-side and query 5-char prefix.", "Deliver tips for passphrases."],
+        evaluationCriteria: ["Zero secret leakage", "Accuracy of entropy math", "Responsive UI feedback"]
+      },
+      {
+        id: "CYB-E-02",
+        theme: "cybersecurity",
+        level: "easy",
+        title: "Encrypted In-Browser Document Drop & Verification",
+        summary: "Implement an end-to-end encrypted in-browser file transfer app using AES-GCM and public-key exchange for temporary secure document drops.",
+        realWorldContext: "Sharing sensitive documents over plaintext email risks intercept and data leakage.",
+        expectedOutcome: [
+          "Client-side file encryption with user-defined or generated key",
+          "Self-decrypting download link or passphrase verification",
+          "Clean drag-and-drop file interface"
+        ],
+        suggestedTools: ["Web Crypto API", "JavaScript", "IndexedDB", "CSS3"],
+        implementationGuidance: ["Use AES-GCM 256-bit encryption before payload leaves the browser.", "Generate unique IV for each drop.", "Provide clean download workflow."],
+        evaluationCriteria: ["Cryptographic correctness", "User experience", "Local decryption speed"]
+      },
+
+      /* Space Technology */
+      {
+        id: "SPC-F-01",
+        theme: "space",
+        level: "flagship",
+        title: "Satellite Imagery Intelligence for Environmental Change",
+        summary: "Build an automated computer vision pipeline that processes multi-spectral satellite imagery to detect deforestation, reservoir shrinkage, and urban heat islands.",
+        realWorldContext: "Earth observation satellites beam terabytes of imagery daily requiring automated segmentation to guide climate intervention.",
+        expectedOutcome: [
+          "Multi-temporal satellite tile alignment and NDVI index calculator",
+          "Segmentation model highlighting significant land-cover delta over time",
+          "Web map dashboard with interactive time-lapse slider"
+        ],
+        suggestedTools: ["Python", "PyTorch", "Rasterio", "GDAL", "Mapbox GL"],
+        implementationGuidance: ["Ingest Sentinel-2 open imagery.", "Calculate Normalized Difference Vegetation Index (NDVI).", "Flag anomalous index variance."],
+        evaluationCriteria: ["Segmentation accuracy", "Geospatial coordinate handling", "Map interaction smoothness"]
+      },
+      {
+        id: "SPC-F-02",
+        theme: "space",
+        level: "flagship",
+        title: "Intelligent Satellite Telemetry Anomaly Detection",
+        summary: "Develop a multivariate streaming telemetry analyzer that predicts solar array degradation and reaction-wheel friction spikes before hardware failure occurs.",
+        realWorldContext: "CubeSats and orbital craft have limited diagnostic bandwidth and rely on ground systems to detect early telemetry trends.",
+        expectedOutcome: [
+          "Streaming telemetry ingest pipeline for simulated satellite subsystems",
+          "Multivariate time-series forecasting detecting subsystem drift",
+          "Visual health telemetry status panel"
+        ],
+        suggestedTools: ["Python", "FastAPI", "InfluxDB", "Chart.js", "LSTM"],
+        implementationGuidance: ["Simulate power, temperature, attitude telemetry.", "Train time-series forecasting models on nominal behavior.", "Trigger predictive failure warnings."],
+        evaluationCriteria: ["Lead time before simulated failure", "Alert precision", "Dashboard responsiveness"]
+      },
+      {
+        id: "SPC-M-01",
+        theme: "space",
+        level: "medium",
+        title: "Satellite Image Terrain & Cloud Cover Classification",
+        summary: "Train an efficient convolutional classifier to distinguish satellite ground imagery into cloud cover, agricultural land, water bodies, and developed zones.",
+        realWorldContext: "Rapid cloud masking and terrain tagging is the essential first filter for ground station image ingestion.",
+        expectedOutcome: [
+          "Trained image classifier with >90% validation accuracy",
+          "Image upload and instant multi-class probability breakdown",
+          "Exportable classification summary"
+        ],
+        suggestedTools: ["Python", "TensorFlow / PyTorch", "Flask", "Tailwind CSS"],
+        implementationGuidance: ["Utilize pre-trained ResNet backbones on open EuroSAT data.", "Provide drag-and-drop test image upload.", "Display class confidence percentages."],
+        evaluationCriteria: ["Model accuracy and inference latency", "Clean web UI", "Confidence calibration"]
+      },
+      {
+        id: "SPC-M-02",
+        theme: "space",
+        level: "medium",
+        title: "Orbital Data 3D Visualisation Globe Dashboard",
+        summary: "Create a 3D Earth globe visualization tracking real-time positions, orbital paths, and ground footprints of active research and weather satellites.",
+        realWorldContext: "Flight directors and students need intuitive 3D spatial awareness of satellite orbits and ground station communication windows.",
+        expectedOutcome: [
+          "Interactive 3D WebGL globe with textured Earth",
+          "TLE (Two-Line Element) orbital propagator computing real-time coordinates",
+          "Satellite info card showing velocity, altitude, and upcoming ground pass"
+        ],
+        suggestedTools: ["JavaScript", "Three.js", "satellite.js", "TLE data"],
+        implementationGuidance: ["Fetch active satellite TLE datasets.", "Propagate SGP4 coordinates using satellite.js.", "Render orbital rings and ground projection footprint."],
+        evaluationCriteria: ["Framerate and WebGL stability", "Astronomical coordinate math", "Usability of satellite selector"]
+      },
+      {
+        id: "SPC-E-01",
+        theme: "space",
+        level: "easy",
+        title: "Interactive Solar System Orbital Mechanics Explorer",
+        summary: "Build an educational, accurate scale model of the solar system featuring planetary orbits, relative velocity, and celestial physical characteristics.",
+        realWorldContext: "Interactive astronomy education benefits from accurate comparative views of planetary size, distance, and orbital mechanics.",
+        expectedOutcome: [
+          "Interactive Canvas or SVG orbital animation with speed control",
+          "Planetary detail drawer showing mass, orbital period, and atmospheric composition",
+          "Distance and scale toggle for realistic versus readable modes"
+        ],
+        suggestedTools: ["HTML5 Canvas", "CSS3", "JavaScript"],
+        implementationGuidance: ["Establish Keplerian orbital period ratios.", "Add click handlers for each planet node.", "Ensure high-contrast accessible design."],
+        evaluationCriteria: ["Smooth 60fps animation", "Educational accuracy", "Mobile touch support"]
+      },
+      {
+        id: "SPC-E-02",
+        theme: "space",
+        level: "easy",
+        title: "Visible Satellite Pass Prediction & Sky Chart Visualiser",
+        summary: "Design a clean tool that calculates upcoming ISS and visible satellite flyovers for any city, displaying look angles, compass bearings, and visibility duration.",
+        realWorldContext: "Stargazers and amateur radio operators need quick predictions of when satellites will rise above the local horizon.",
+        expectedOutcome: [
+          "City/coordinate search with instant pass calculation",
+          "Visual sky-chart compass showing rise, peak elevation, and set trajectory",
+          "Countdown timer to the next visible pass"
+        ],
+        suggestedTools: ["JavaScript", "HTML5", "OpenStreetMap API", "CSS"],
+        implementationGuidance: ["Calculate azimuth and elevation relative to user latitude/longitude.", "Filter for dark hour passes.", "Draw the sky path on an interactive radial dial."],
+        evaluationCriteria: ["Pass time accuracy", "Sky chart readability", "Zero third-party framework overhead"]
+      },
+
+      /* Quantum Computing */
+      {
+        id: "QNT-F-01",
+        theme: "quantum",
+        level: "flagship",
+        title: "Quantum-Inspired Optimisation for High-Dimensional Logistics",
+        summary: "Implement a simulated annealing and QAOA inspired solver for high-dimensional logistics and job-shop scheduling problems.",
+        realWorldContext: "Complex industrial supply chains face NP-hard routing problems where quantum-inspired heuristics uncover near-optimal paths faster than brute force.",
+        expectedOutcome: [
+          "QUBO (Quadratic Unconstrained Binary Optimization) problem formulation module",
+          "Quantum-inspired annealing algorithm benchmarked against classical baselines",
+          "Visual convergence dashboard showing energy-state minimization over iterations"
+        ],
+        suggestedTools: ["Python", "NumPy", "Qiskit Optimization", "Chart.js"],
+        implementationGuidance: ["Formulate traveling salesperson or scheduling as a QUBO matrix.", "Simulate quantum tunneling through energy barriers.", "Compare time-to-solution against classical baselines."],
+        evaluationCriteria: ["Formulation rigor", "Algorithm speed and solution quality", "Comparison clarity"]
+      },
+      {
+        id: "QNT-F-02",
+        theme: "quantum",
+        level: "flagship",
+        title: "Classical vs Quantum Algorithm Empirical Benchmarking",
+        summary: "Develop an empirical benchmarking playground that pits Grover's search and Shor's period-finding against classical counterparts across increasing problem scales.",
+        realWorldContext: "Engineers require tangible empirical evidence of where quantum advantage begins versus classical polynomial scaling.",
+        expectedOutcome: [
+          "Simulation of classical linear search vs Grover amplitude amplification",
+          "Theoretical and empirical complexity scaling graphs (O(N) vs O(√N))",
+          "Interactive circuit depth and gate count telemetry"
+        ],
+        suggestedTools: ["Python", "Cirq / Qiskit", "FastAPI", "React / Vanilla JS"],
+        implementationGuidance: ["Simulate oracle queries and state vector rotations.", "Count gate executions and state probabilities.", "Plot runtime curves as search space grows."],
+        evaluationCriteria: ["Mathematical fidelity", "Clarity of quantum speedup proof", "Usability of interactive controls"]
+      },
+      {
+        id: "QNT-M-01",
+        theme: "quantum",
+        level: "medium",
+        title: "Interactive 3-Qubit Quantum Circuit Simulator",
+        summary: "Build an interactive browser circuit builder allowing users to place Hadamard, Pauli, CNOT, and Phase gates on 3 qubits and observe state vector changes.",
+        realWorldContext: "Students learning quantum mechanics struggle with abstract matrix multiplication without real-time state visualization.",
+        expectedOutcome: [
+          "Click-to-place quantum gate canvas",
+          "Matrix multiplication engine computing final state vector amplitudes",
+          "Probability histogram of measurement outcomes"
+        ],
+        suggestedTools: ["JavaScript", "HTML5 Canvas / SVG", "Math.js", "CSS"],
+        implementationGuidance: ["Represent single-qubit gates as 2x2 unitary matrices, two-qubit as 4x4.", "Compute tensor products.", "Display probabilities dynamically."],
+        evaluationCriteria: ["Mathematical correctness of unitary operations", "Circuit layout responsiveness", "Clean probability visuals"]
+      },
+      {
+        id: "QNT-M-02",
+        theme: "quantum",
+        level: "medium",
+        title: "3D Bloch Sphere Qubit State Visualisation Tool",
+        summary: "Create a 3D interactive Bloch Sphere that represents single-qubit pure states, phase angles (θ, φ), and animated rotations under quantum logic gates.",
+        realWorldContext: "The Bloch sphere is the foundational geometric representation of a two-level quantum system, essential for intuitive quantum gate intuition.",
+        expectedOutcome: [
+          "3D interactive Bloch sphere rendered with WebGL / Three.js",
+          "State vector arrow responding to coordinate sliders and gate buttons",
+          "Display of Dirac bra-ket notation: |ψ⟩ = cos(θ/2)|0⟩ + e^(iφ)sin(θ/2)|1⟩"
+        ],
+        suggestedTools: ["Three.js", "JavaScript", "HTML5"],
+        implementationGuidance: ["Render unit sphere with latitude/longitude guides.", "Animate state vector smoothly along spherical arcs.", "Update amplitude formulas in real time."],
+        evaluationCriteria: ["3D rendering quality", "Smooth rotational interpolations", "Accessible coordinate controls"]
+      },
+      {
+        id: "QNT-E-01",
+        theme: "quantum",
+        level: "easy",
+        title: "Interactive Superposition & Entanglement Learning Playground",
+        summary: "Design an interactive step-by-step tutorial introducing superposition, entanglement, and quantum measurement through bite-sized puzzles.",
+        realWorldContext: "Demystifying quantum mechanics for beginners requires progressive interactive challenges rather than dry textbook theorems.",
+        expectedOutcome: [
+          "Sequential interactive modules (Superposition, Entanglement, Teleportation)",
+          "Interactive coin-flip simulation demonstrating quantum random measurement",
+          "Knowledge-check quizzes with immediate visual feedback"
+        ],
+        suggestedTools: ["HTML5", "CSS3", "JavaScript"],
+        implementationGuidance: ["Provide visual metaphors (quantum coin that spins until observed).", "Track learner progress.", "Zero complex jargon in introductory explanations."],
+        evaluationCriteria: ["Pedagogical clarity", "Design restraint", "Flawless mobile interaction"]
+      },
+      {
+        id: "QNT-E-02",
+        theme: "quantum",
+        level: "easy",
+        title: "Superposition Wavefunction Collapse Simulator",
+        summary: "Develop an interactive visual tool showing how equal superposition collapses into discrete binary states across repeated measurement trials.",
+        realWorldContext: "Understanding probability distributions and Born's rule is the first step toward grasp of quantum hardware measurement runs.",
+        expectedOutcome: [
+          "Interactive measurement dial triggering 1 to 10,000 simulated shots",
+          "Dynamic bar chart updating as sample counts approach distribution",
+          "Statistical variance calculation demonstrating the Law of Large Numbers"
+        ],
+        suggestedTools: ["JavaScript", "HTML5 Canvas", "CSS Flexbox"],
+        implementationGuidance: ["Simulate pseudo-random quantum measurement collapses.", "Plot cumulative frequencies dynamically.", "Provide slider to skew basis probabilities."],
+        evaluationCriteria: ["Chart performance under 10k shots", "Clear scientific labeling", "Clean visual aesthetic"]
+      },
+
+      /* FinTech */
+      {
+        id: "FIN-F-01",
+        theme: "fintech",
+        level: "flagship",
+        title: "Explainable Real-time Financial Fraud Scoring & SHAP Attribution",
+        summary: "Engineer a high-throughput transaction scoring pipeline utilizing SHAP (SHapley Additive exPlanations) to provide real-time regulatory compliance and fraud explanations.",
+        realWorldContext: "Banking regulations require financial institutions to explain exactly why a credit card payment or wire transfer was flagged or frozen.",
+        expectedOutcome: [
+          "Low-latency fraud scoring engine evaluating transaction velocity and geolocation delta",
+          "SHAP feature importance waterfall chart generated for every flagged payment",
+          "Compliance investigation portal allowing human analysts to confirm or dispute alerts"
+        ],
+        suggestedTools: ["Python", "FastAPI", "XGBoost", "SHAP", "Chart.js"],
+        implementationGuidance: ["Train model on anonymized credit card fraud benchmark.", "Compute localized SHAP values for anomaly triggers.", "Render intuitive bar breakdowns."],
+        evaluationCriteria: ["Inference throughput", "Clarity of human-readable explanations", "Dashboard usability"]
+      },
+      {
+        id: "FIN-F-02",
+        theme: "fintech",
+        level: "flagship",
+        title: "Inclusive Alternative Credit-Risk Scoring Prototype",
+        summary: "Create an alternative credit-scoring model incorporating utility payment consistency, cash-flow stability, and business turnover for unbanked micro-entrepreneurs.",
+        realWorldContext: "Millions of small merchants lack formal credit histories, excluding them from affordable commercial credit despite consistent cash flows.",
+        expectedOutcome: [
+          "Multi-source financial data ingest simulator (utility bills, UPI cash flows, merchant logs)",
+          "Alternative credit risk algorithm with transparent score calibration (300-850)",
+          "Applicant transparency portal detailing steps to improve score eligibility"
+        ],
+        suggestedTools: ["Python", "scikit-learn", "FastAPI", "HTML5/CSS"],
+        implementationGuidance: ["Weight cash-flow volatility, recurring payment timeliness, savings buffer.", "Implement fair-lending bias mitigation checks.", "Provide actionable improvement suggestions."],
+        evaluationCriteria: ["Fairness and bias mitigation", "Model stability", "Applicant portal clarity"]
+      },
+      {
+        id: "FIN-M-01",
+        theme: "fintech",
+        level: "medium",
+        title: "Personal Expense Intelligence & Subscription Creep Auditor",
+        summary: "Build an intelligent personal budget dashboard with automated receipt parsing, categorical cash-burn projections, and anomaly subscription detection.",
+        realWorldContext: "Modern consumers lose hundreds annually to recurring forgotten subscriptions and irregular expenditure drift.",
+        expectedOutcome: [
+          "CSV transaction import and automated merchant categorization",
+          "Monthly burn-rate chart with 30-day forward cash-flow projection",
+          "Automated detection of recurring price creep on subscription charges"
+        ],
+        suggestedTools: ["JavaScript", "Chart.js", "IndexedDB", "CSS Grid"],
+        implementationGuidance: ["Pattern matching for bank statement descriptions.", "Compute rolling averages and forecast month-end balance.", "Highlight charges repeating at 30-day intervals."],
+        evaluationCriteria: ["Data privacy (100% client-side processing)", "Chart clarity", "Categorization accuracy"]
+      },
+      {
+        id: "FIN-M-02",
+        theme: "fintech",
+        level: "medium",
+        title: "Suspicious Transaction Network Graph Explorer",
+        summary: "Develop a visual workbench that maps accounts, shared devices, and transaction flows to expose synthetic identity rings and mule account networks.",
+        realWorldContext: "Fraud syndicates use networks of mule accounts to split and launder stolen funds within minutes of unauthorized access.",
+        expectedOutcome: [
+          "Network graph connecting bank accounts, IP addresses, and phone identifiers",
+          "Clustering algorithm highlighting high-degree money mule hubs",
+          "Timeline playback of suspicious fund dispersion"
+        ],
+        suggestedTools: ["D3.js", "JavaScript", "Node.js"],
+        implementationGuidance: ["Construct multi-partite graph linking accounts through shared attributes.", "Calculate centrality scores.", "Provide timeline scrubbing to trace money velocity."],
+        evaluationCriteria: ["Graph layout performance", "Clustering accuracy", "Investigator workflow efficiency"]
+      },
+      {
+        id: "FIN-E-01",
+        theme: "fintech",
+        level: "easy",
+        title: "Dynamic 50/30/20 Budget Planning & Debt Snowball Tool",
+        summary: "Design an intuitive 50/30/20 budget planner with income allocation dials, debt snowball repayment calculators, and target savings projections.",
+        realWorldContext: "Young adults starting careers need clean financial planning tools free from aggressive ad-driven loan promotions.",
+        expectedOutcome: [
+          "Interactive income breakdown based on Needs, Wants, and Savings rules",
+          "Debt payoff schedule comparator (Snowball vs Avalanche)",
+          "Downloadable PDF or CSV financial summary"
+        ],
+        suggestedTools: ["HTML5", "CSS3", "JavaScript"],
+        implementationGuidance: ["Dynamic input calculations without page reloads.", "Responsive visual feedback on budget surplus or deficit.", "Strict focus on readable tabular numerals."],
+        evaluationCriteria: ["Calculation precision", "Zero-clutter user experience", "Mobile touch friendliness"]
+      },
+      {
+        id: "FIN-E-02",
+        theme: "fintech",
+        level: "easy",
+        title: "Compound Interest & Inflation Purchasing Power Visualiser",
+        summary: "Build an interactive financial simulator illustrating the power of compound interest, inflation erosion, and portfolio diversification.",
+        realWorldContext: "Understanding how inflation diminishes idle savings versus compound investments is essential for long-term financial security.",
+        expectedOutcome: [
+          "Compound interest calculator with customizable monthly deposits and inflation toggles",
+          "Visual comparison of cash savings versus index investing over 10-40 years",
+          "Interactive inflation cost-of-living comparison slider"
+        ],
+        suggestedTools: ["HTML5 Canvas / SVG", "Vanilla JS", "CSS"],
+        implementationGuidance: ["Compute future value: FV = P(1 + r/n)^(nt).", "Adjust for real purchasing power: (FV) / (1 + i)^t.", "Render high-legibility comparison curves."],
+        evaluationCriteria: ["Mathematical accuracy", "Simplicity and accessibility", "Visual finish"]
+      },
+
+      /* Energy & Sustainability */
+      {
+        id: "SUS-F-01",
+        theme: "sustainability",
+        level: "flagship",
+        title: "Intelligent Renewable Energy Forecasting via Weather Models",
+        summary: "Develop a hybrid machine learning model that forecasts solar panel array and wind turbine yield 48 hours in advance using numerical weather predictions.",
+        realWorldContext: "Intermittent renewable generation causes grid instability unless regional utilities can predict production swings with high confidence.",
+        expectedOutcome: [
+          "Time-series model predicting hourly megawatt generation from weather features",
+          "Confidence intervals (P10, P50, P90) indicating generation uncertainty",
+          "Utility operator forecast console with weather parameter overlays"
+        ],
+        suggestedTools: ["Python", "Prophet / LightGBM", "FastAPI", "Chart.js"],
+        implementationGuidance: ["Ingest historical solar irradiance, wind speed, temperature.", "Train gradient boosted regression models.", "Produce hourly curves with clear error margins."],
+        evaluationCriteria: ["Mean Absolute Percentage Error (MAPE)", "Uncertainty calibration", "Dashboard clarity"]
+      },
+      {
+        id: "SUS-F-02",
+        theme: "sustainability",
+        level: "flagship",
+        title: "Smart-Grid Peak Shaving & EV Fleet Coordination Simulator",
+        summary: "Construct a dynamic load-balancing simulator that coordinates smart EV charging stations and industrial batteries to shave peak energy consumption.",
+        realWorldContext: "Unmanaged EV charging during evening peak hours threatens substation transformer overloads and forces deployment of dirty peaker plants.",
+        expectedOutcome: [
+          "Microgrid simulation modeling fluctuating demand, solar generation, and 100+ EV chargers",
+          "Dynamic pricing or priority queuing algorithm that flattens aggregate peak load",
+          "Substation load profile monitor displaying transformer stress reduction"
+        ],
+        suggestedTools: ["Python", "SimPy / NumPy", "FastAPI", "Canvas"],
+        implementationGuidance: ["Formulate peak shaving as a constrained optimization problem.", "Shift flexible EV charging loads to mid-day solar surplus hours.", "Quantify avoided carbon emissions."],
+        evaluationCriteria: ["Peak-to-average ratio reduction", "Simulation fidelity", "Visual quality of grid monitor"]
+      },
+      {
+        id: "SUS-M-01",
+        theme: "sustainability",
+        level: "medium",
+        title: "Household Energy Consumption Analytics & Vampire Drain Detector",
+        summary: "Build an IoT energy monitor dashboard that disaggregates household smart meter data to pinpoint vampire power drain and heating inefficiencies.",
+        realWorldContext: "Homeowners receive aggregate utility bills without knowing which specific appliances are driving up costs or wasting electricity.",
+        expectedOutcome: [
+          "Smart meter time-series ingestion with high/low tariff zone breakdown",
+          "Appliance signature disaggregation (refrigerator, AC, standby electronics)",
+          "Actionable recommendations showing monetary savings from usage shifts"
+        ],
+        suggestedTools: ["JavaScript", "Chart.js", "Node.js", "CSS3"],
+        implementationGuidance: ["Analyze baseline night-time consumption to estimate standby vampire draw.", "Detect cyclic motor compressor signatures.", "Display time-of-use cost savings estimates."],
+        evaluationCriteria: ["Analytics usability", "Clear energy units (kWh, ₹, kg CO2)", "Responsive layout"]
+      },
+      {
+        id: "SUS-M-02",
+        theme: "sustainability",
+        level: "medium",
+        title: "Rooftop Solar & Battery Storage Power Flow Monitor",
+        summary: "Create a monitoring dashboard for rooftop solar installations tracking real-time kilowatt output, battery state of charge, and carbon offset milestones.",
+        realWorldContext: "Solar system owners need intuitive metrics on solar self-consumption versus grid exports to maximize their investment.",
+        expectedOutcome: [
+          "Real-time power flow diagram (Solar → Inverter → Home / Battery / Grid)",
+          "Daily and monthly generation versus consumption comparison graphs",
+          "Equivalency metrics (trees planted, coal avoided, monetary savings)"
+        ],
+        suggestedTools: ["HTML5 Canvas / SVG", "Chart.js", "JavaScript", "CSS"],
+        implementationGuidance: ["Animate power flow lines indicating direction of energy transfer.", "Calculate self-sufficiency percentage: (solar consumed / total consumed) * 100.", "Provide clean tabular summary."],
+        evaluationCriteria: ["Diagram clarity and animation smoothness", "Metric correctness", "Mobile adaptability"]
+      },
+      {
+        id: "SUS-E-01",
+        theme: "sustainability",
+        level: "easy",
+        title: "Personal Lifestyle Carbon Footprint Estimator",
+        summary: "Develop a transparent personal carbon footprint calculator evaluating daily transportation, diet, home electricity, and consumer purchases.",
+        realWorldContext: "Individuals are often unaware of which personal lifestyle factors contribute most significantly to annual greenhouse gas emissions.",
+        expectedOutcome: [
+          "Multi-category questionnaire with regional metric conversion factors",
+          "Visual breakdown comparing personal tonnage to national and global averages",
+          "Personalized roadmap to reduce emissions by 20% over 12 months"
+        ],
+        suggestedTools: ["HTML5", "CSS3", "JavaScript"],
+        implementationGuidance: ["Use verified IPCC emission factors.", "Display immediate dynamic chart updates as questions are answered.", "Provide realistic reduction milestones."],
+        evaluationCriteria: ["Scientific basis of emission coefficients", "Form usability", "Clean typographic presentation"]
+      },
+      {
+        id: "SUS-E-02",
+        theme: "sustainability",
+        level: "easy",
+        title: "Daily Sustainable Habit Tracking & Impact Calculator",
+        summary: "Design a lightweight, privacy-focused daily habit checklist for tracking public transit use, reusable container adoption, and composting.",
+        realWorldContext: "Building consistent environmental habits requires positive reinforcement, streak tracking, and tangible cumulative impact metrics.",
+        expectedOutcome: [
+          "Daily checklist with customizable sustainable action items",
+          "Cumulative savings counter (single-use plastics avoided, liters of water saved)",
+          "Local storage persistence with zero tracking or telemetry"
+        ],
+        suggestedTools: ["HTML5", "CSS Grid", "JavaScript (LocalStorage)"],
+        implementationGuidance: ["Store streaks and completed habits in browser localStorage.", "Calculate environmental impact multipliers upon task completion.", "Provide clean interface."],
+        evaluationCriteria: ["Usability and speed", "100% offline functionality", "Polished accessible design"]
+      }
+    ];
+
+    /* ========================================================
+       4. ROUTING & FULL-SCREEN VIEW CONTROLLER
+       ======================================================== */
+    let currentSelectedTheme = "cybersecurity";
+    let currentThemeProblemLevel = "flagship";
+
+    function initPageRouting() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const themeParam = urlParams.get('theme');
+
+      if (themeParam && THEMES_CONFIG[themeParam]) {
+        renderThemeFullScreenView(themeParam, false);
+      } else {
+        renderLandingPageView(false);
+      }
+    }
+
+    function renderLandingPageView(animated = true) {
+      const fader = document.getElementById('page-fader');
+      const landing = document.getElementById('landing-page-view');
+      const themePage = document.getElementById('theme-page-view');
+
+      const performSwap = () => {
+        landing.style.display = 'block';
+        themePage.style.display = 'none';
+        document.title = "CHAKRAVYUH: CYBERSHIELD HACKATHON · VIT-AP University";
+        window.scrollTo(0, 0);
+
+        setTimeout(resizeCyberTunnel, 50);
+
+        if (animated) {
+          fader.classList.remove('page-exit');
+          fader.classList.add('page-enter');
+          requestAnimationFrame(() => {
+            fader.classList.remove('page-enter');
+          });
+        }
+      };
+
+      if (animated) {
+        fader.classList.add('page-exit');
+        setTimeout(performSwap, 220);
+      } else {
+        performSwap();
+      }
+    }
+
+    function renderThemeFullScreenView(themeKey, animated = true) {
+      const config = THEMES_CONFIG[themeKey];
+      if (!config) return renderLandingPageView(animated);
+
+      currentSelectedTheme = themeKey;
+      const fader = document.getElementById('page-fader');
+      const landing = document.getElementById('landing-page-view');
+      const themePage = document.getElementById('theme-page-view');
+
+      const performSwap = () => {
+        landing.style.display = 'none';
+        themePage.style.display = 'block';
+
+        // Apply theme's unique background image & emotive styling
+        themePage.style.backgroundImage = `url('${config.heroBg}')`;
+        const overlay = document.getElementById('theme-page-overlay');
+        overlay.style.background = config.overlayGradient;
+
+        // Update Theme Banner Content
+        document.getElementById('theme-badge-label').textContent = `THEME ${config.number} · ${config.label}`;
+        document.getElementById('theme-headline').textContent = config.title;
+        document.getElementById('theme-banner-quote').textContent = config.motivationalQuote;
+        document.getElementById('theme-paragraph').textContent = config.subtitle;
+        document.getElementById('theme-banner-img').src = config.heroBg;
+        document.getElementById('theme-banner-img').alt = config.title;
+
+        // Render Challenges for default level (Flagship)
+        currentThemeProblemLevel = "flagship";
+        updateLevelTabButtons("flagship");
+        renderThemeChallengesList(themeKey, "flagship");
+
+        // Render quick switchers to other 4 themes
+        renderQuickThemeSwitchers(themeKey);
+
+        document.title = `${config.title} · Theme ${config.number} · CHAKRAVYUH`;
+        window.scrollTo(0, 0);
+
+        if (animated) {
+          fader.classList.remove('page-exit');
+          fader.classList.add('page-enter');
+          requestAnimationFrame(() => {
+            fader.classList.remove('page-enter');
+          });
+        }
+      };
+
+      if (animated) {
+        fader.classList.add('page-exit');
+        setTimeout(performSwap, 220);
+      } else {
+        performSwap();
+      }
+    }
+
+    function dismissCurtain() {
+      const curtain = document.getElementById('screen-transition-curtain');
+      if (curtain) {
+        curtain.classList.remove('active-in');
+        curtain.classList.add('active-out');
+        setTimeout(() => {
+          curtain.classList.remove('active-out');
+          curtain.style.pointerEvents = 'none';
+        }, 500);
+      }
+    }
+
+    function handleNavTabClick(targetHash, e) {
+      if (e) e.preventDefault();
+      closeMobileNav();
+
+      document.querySelectorAll('.nav-menu-link').forEach(link => {
+        if (link.getAttribute('href') === targetHash) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+
+      const landing = document.getElementById('landing-page-view');
+      if (landing && landing.style.display === 'none') {
+        history.pushState(null, '', 'index.html' + targetHash);
+        renderLandingPageView(true);
+        setTimeout(() => {
+          const target = document.querySelector(targetHash);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 300);
+      } else {
+        const target = document.querySelector(targetHash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          history.pushState(null, '', targetHash);
+        }
+      }
+    }
+
+    function navigateToHome(e) {
+      if (e) e.preventDefault();
+      history.pushState(null, '', 'index.html');
+      renderLandingPageView(true);
+    }
+
+    function navigateToTheme(themeKey, e) {
+      if (e) e.preventDefault();
+      history.pushState(null, '', `?theme=${themeKey}`);
+      renderThemeFullScreenView(themeKey, true);
+    }
+
+    function openSelectedTheme() {
+      history.pushState(null, '', `?theme=${currentSelectedTheme}`);
+      renderThemeFullScreenView(currentSelectedTheme, true);
+    }
+
+    function smoothScrollTo(selector, e) {
+      if (e) e.preventDefault();
+      const landing = document.getElementById('landing-page-view');
+      if (landing && landing.style.display === 'none') {
+        history.pushState(null, '', 'index.html');
+        renderLandingPageView(false);
+        setTimeout(() => {
+          const target = document.querySelector(selector);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
+      } else {
+        const target = document.querySelector(selector);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+
+    /* ========================================================
+       5. CHAKRA THEME SELECTION & HOVER PREVIEW
+       ======================================================== */
+    const themePointerNodes = document.querySelectorAll('.infographic-theme-node');
+    const spotlightImg = document.getElementById('chakra-spotlight-img');
+    const spotlightKicker = document.getElementById('chakra-spotlight-kicker');
+    const spotlightTitle = document.getElementById('chakra-spotlight-title');
+    const spotlightQuote = document.getElementById('chakra-spotlight-quote');
+    const spotlightDesc = document.getElementById('chakra-spotlight-desc');
+
+    function highlightChakraTheme(themeKey) {
+      const config = THEMES_CONFIG[themeKey];
+      if (!config) return;
+      currentSelectedTheme = themeKey;
+
+      themePointerNodes.forEach(node => {
+        if (node.getAttribute('data-theme-key') === themeKey) {
+          node.classList.add('active');
+        } else {
+          node.classList.remove('active');
+        }
+      });
+
+      if (spotlightImg) spotlightImg.src = config.frontierImg;
+      if (spotlightKicker) spotlightKicker.textContent = `THEME ${config.number} · ${config.label}`;
+      if (spotlightTitle) spotlightTitle.textContent = config.title;
+      if (spotlightQuote) spotlightQuote.textContent = config.motivationalQuote;
+      if (spotlightDesc) spotlightDesc.textContent = config.subtitle;
+    }
+
+    themePointerNodes.forEach(node => {
+      const key = node.getAttribute('data-theme-key');
+      node.addEventListener('mouseenter', () => highlightChakraTheme(key));
+      node.addEventListener('focus', () => highlightChakraTheme(key));
+      node.addEventListener('click', () => {
+        highlightChakraTheme(key);
+        navigateToTheme(key);
+      });
+      node.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          navigateToTheme(key);
+        }
+      });
+    });
+
+    /* ========================================================
+       6. LEVEL SWITCHER (FLAGSHIP, MEDIUM, EASY) INSIDE THEME PAGE
+       ======================================================== */
+    function switchThemeProblemLevel(level) {
+      currentThemeProblemLevel = level;
+      updateLevelTabButtons(level);
+      renderThemeChallengesList(currentSelectedTheme, level);
+    }
+
+    function updateLevelTabButtons(level) {
+      ['flagship', 'medium', 'easy'].forEach(lvl => {
+        const btn = document.getElementById(`btn-lvl-${lvl}`);
+        if (btn) {
+          if (lvl === level) btn.classList.add('active');
+          else btn.classList.remove('active');
+        }
+      });
+    }
+
+    function renderThemeChallengesList(themeKey, level) {
+      const container = document.getElementById('theme-problems-list');
+      container.innerHTML = '';
+
+      const matched = CHALLENGES_DATABASE.filter(c => c.theme === themeKey && c.level === level);
+
+      if (matched.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; padding: 3rem; text-align: center; color: var(--steel-blue); background: rgba(7, 20, 38, 0.8); border-radius: 12px; border: 1px solid var(--navy-border);">
+            No challenges currently registered under this level.
+          </div>
+        `;
+        return;
+      }
+
+      matched.forEach(challenge => {
+        const card = document.createElement('div');
+        card.className = 'challenge-card';
+
+        const isFlagship = challenge.level === 'flagship';
+        const levelLabel = challenge.level === 'flagship' ? 'FLAGSHIP' : (challenge.level === 'medium' ? 'MEDIUM' : 'EASY');
+        const toolsHtml = challenge.suggestedTools.map(t => `<span class="tool-badge">${t}</span>`).join('');
+
+        card.innerHTML = `
+          <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+            <div class="challenge-card-header">
+              <span class="challenge-id-badge">${challenge.id}</span>
+              <span class="challenge-level-pill ${isFlagship ? 'flagship' : ''}">${levelLabel}</span>
+            </div>
+            <h3 class="challenge-card-title">${challenge.title}</h3>
+            <p class="challenge-card-summary">${challenge.summary}</p>
+          </div>
+          <div>
+            <div class="tools-tag-row" style="margin-bottom: 1rem;">
+              ${toolsHtml}
+            </div>
+            <div class="challenge-card-footer">
+              <span style="font-size: 0.72rem; color: var(--gold-signal); font-weight: 600;">DRAFT SPECIFICATION</span>
+              <button class="btn-dock-cta" onclick="openChallengeModal('${challenge.id}')">
+                <span>View Full Challenge</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderQuickThemeSwitchers(activeThemeKey) {
+      const grid = document.getElementById('quick-switch-grid');
+      grid.innerHTML = '';
+
+      Object.values(THEMES_CONFIG).forEach(th => {
+        if (th.id === activeThemeKey) return;
+
+        const card = document.createElement('div');
+        card.className = 'quick-switch-card';
+        card.onclick = (e) => navigateToTheme(th.id, e);
+        card.innerHTML = `
+          <span style="font-size: 0.72rem; font-family: var(--font-display); font-weight: 700; color: var(--cyan-neon);">[${th.number}]</span>
+          <span style="font-size: 0.88rem; font-weight: 700; color: var(--white-ice);">${th.label}</span>
+          <span style="font-size: 0.75rem; color: var(--steel-blue);">Switch to frontier →</span>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    /* ========================================================
+       7. CHALLENGE DETAIL MODAL
+       ======================================================== */
+    function openChallengeModal(problemId) {
+      const problem = CHALLENGES_DATABASE.find(item => item.id === problemId);
+      if (!problem) return;
+
+      document.getElementById('modal-problem-id').textContent = `${problem.id} · ${(problem.level || '').toUpperCase()}`;
+      document.getElementById('modal-problem-name').textContent = problem.title || '';
+      document.getElementById('modal-problem-summary').textContent = problem.summary || '';
+      document.getElementById('modal-problem-context').textContent = problem.realWorldContext || '';
+
+      const outcomes = problem.expectedOutcome || problem.expectedOutcomes || [];
+      document.getElementById('modal-problem-outcomes').innerHTML = outcomes.map(o => `<li>${o}</li>`).join('');
+
+      const tools = problem.suggestedTools || [];
+      document.getElementById('modal-problem-tools').innerHTML = tools.map(t => `<span class="tool-badge">${t}</span>`).join('');
+
+      const guidance = problem.implementationGuidance || [];
+      document.getElementById('modal-problem-guidance').innerHTML = guidance.map(g => `<li>${g}</li>`).join('');
+
+      const evalCriteria = problem.evaluationCriteria || [];
+      document.getElementById('modal-problem-eval').innerHTML = evalCriteria.map(e => `<li>${e}</li>`).join('');
+
+      const modal = document.getElementById('challenge-detail-modal');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeChallengeModal() {
+      const modal = document.getElementById('challenge-detail-modal');
+      if (modal) modal.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+
+    const detailModal = document.getElementById('challenge-detail-modal');
+    if (detailModal) {
+      detailModal.addEventListener('click', function(e) {
+        if (e.target === this) closeChallengeModal();
+      });
+    }
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeChallengeModal();
+    });
+
+    /* ========================================================
+       8. MOBILE MENU & INTERSECTION OBSERVER REVEALS
+       ======================================================== */
+    const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+    const mobileFloatingMenu = document.getElementById('mobile-floating-menu');
+
+    if (mobileNavToggle && mobileFloatingMenu) {
+      mobileNavToggle.addEventListener('click', () => {
+        mobileFloatingMenu.classList.toggle('open');
+      });
+    }
+
+    function closeMobileNav() {
+      if (mobileFloatingMenu) mobileFloatingMenu.classList.remove('open');
+    }
+
+    function checkReveals() {
+      document.querySelectorAll('.reveal-section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.95 && rect.bottom > 0) {
+          section.classList.add('is-revealed');
+        }
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-section').forEach(section => {
+      observer.observe(section);
+    });
+
+    window.addEventListener('scroll', checkReveals, { passive: true });
+
+    window.addEventListener('popstate', () => {
+      initPageRouting();
+    });
+
+    function initAll() {
+      initPageRouting();
+      initCyberTunnel();
+      highlightChakraTheme('cybersecurity');
+      dismissCurtain();
+      checkReveals();
+    }
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initAll);
+    } else {
+      initAll();
+    }
+    window.addEventListener('load', () => {
+      dismissCurtain();
+      checkReveals();
+      resizeCyberTunnel();
+    });
+  </script>
+</body>
+</html>

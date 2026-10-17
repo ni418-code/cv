@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chakravyuh.vitap.ac.in/sitemap.xml

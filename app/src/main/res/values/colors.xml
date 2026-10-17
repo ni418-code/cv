@@ -1,0 +1,9 @@
+<resources>
+    <color name="navy_bg">#071426</color>
+    <color name="navy_surface">#0C2B52</color>
+    <color name="blue_electric">#287BFF</color>
+    <color name="cyan_neon">#58E1FF</color>
+    <color name="white_ice">#F3F8FF</color>
+    <color name="steel_blue">#8CA6C5</color>
+    <color name="gold_signal">#F5BD55</color>
+</resources>
